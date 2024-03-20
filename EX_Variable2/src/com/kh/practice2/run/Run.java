@@ -12,6 +12,8 @@ public class Run {
 		CastingPractice2 cp2 = new CastingPractice2();
 		cp2.method();
 
+		// 변경 사항 확인용
+
 	}
 
 }
