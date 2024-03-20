@@ -23,7 +23,6 @@ public class CastingPractice {
 		System.out.println("총점 : " + total);
 		System.out.println("평균 : " + average);
 		
-		// 확인용 주석
 		
 	}
 
