@@ -8,8 +8,8 @@ public class Run {
 		aa.quiz();
 		
 		B_InDecrease bb = new B_InDecrease();
-		//bb.method1();
-		//bb.method2();
+		bb.method1();
+		bb.method2();
 
 	}
 
