@@ -7,7 +7,7 @@ public class Run {
 	public static void main(String[] args) {
 		
 		OperatorPractice op = new OperatorPractice();
-		op.practice1();
+		op.practice4();
 
 	}
 

@@ -32,22 +32,67 @@ public class OperatorPractice {
 		sc.nextLine();
 		
 		System.out.print("성별(M/F) : ");
-		String gender = sc.nextLine();
+		char gender = sc.nextLine().charAt(0);
+		String genderAnswer;
+		
+		
+		if(gender == 'M')
+		{
+			genderAnswer = "남학생";
+		}
+		
+		else
+		{
+			genderAnswer = "여학생";
+		}
 		
 		System.out.print("성적(소수점 아래 둘째자리까지) : ");
+		double score = sc.nextDouble();
+		
+		System.out.printf("%d학년 %d반 %d번 %s %s의 성적은 %.2f 입니다." , grade , classes , number , name , genderAnswer , score);
 		
 
 	}
 
 	public void practice3() {
+		
+		System.out.print("나이 : ");
+		int age = sc.nextInt();
+		
+		if(age <= 13) {
+			System.out.println("어린이");
+		} else if (age <= 19) {
+			System.out.println("청소년");	
+		} else {
+			System.out.println("청년");
+		}
 
 	}
 
 	public void practice4() {
+		
+		System.out.print("국어 : ");
+		int kor = sc.nextInt();
+
+		System.out.print("영어 : ");
+		int eng = sc.nextInt();
+
+		System.out.print("수학 : ");
+		int math = sc.nextInt();
+		
+		int sum = kor + eng + math ;
+		double avg = (double)sum / 3 ;
+		
+		System.out.println("합계 : " + sum);
+		System.out.println("평균 : " + avg);
+		
+		if(avg >= 60) System.out.println("합격");
+		else System.out.println("불합격");
 
 	}
 
 	public void practice5() {
+		System.out.print("주민 번호를 입력하세요. : ");
 
 	}
 
