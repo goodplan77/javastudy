@@ -291,6 +291,64 @@ public class ControlPractice {
 	}
 
 	public void practice11() {
+		
+		System.out.print("비밀번호 입력(1000~9999) : ");
+		int password = sc.nextInt();
+		
+		if(password <1000 || password >9999)
+		{
+			System.out.println("자릿수 안맞음");
+			return;
+		}
+		
+		int num1 = password / 1000;
+		int num2 = (password % 1000) / 100 ;
+		int num3 = (password % 100) / 10 ; 
+		int num4 = password % 10 ; 
+		
+		/*
+		int numbers[] = new int[4];
+		numbers[0] = num1;
+		numbers[1] = num2;
+		numbers[2] = num3;
+		numbers[3] = num4;
+		*/
+		
+		System.out.printf("%d %d %d %d\n" , num1 , num2 , num3 , num4);
+		
+		if(num1 == num2 || num1 == num3 || num1 == num4)
+		{
+			System.out.println("실패");
+		} else if (num2 == num3 || num2 == num4) {
+			System.out.println("실패");
+		} else if (num3 == num4) {
+			System.out.println("실패");
+		} else {
+			System.out.println("성공");
+		}
+		
+		
+		/*
+		boolean test = true;
+		
+	
+		for(int i = 0 ; i < 4 ; i++) {
+			for(int j = i+1 ; j < 4 ; j++){
+				if(numbers[j]==numbers[i]) {
+					System.out.println("실패");
+					test = false;
+					break;
+				}
+			}
+			
+			if(test == false) break;
+		}
+		
+		if(test == true) System.out.println("성공");
+		*/
+		
+		
+		
 
 	}
 
