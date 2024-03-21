@@ -47,13 +47,7 @@ public class OperatorPractice {
 		System.out.print("나이 : ");
 		int age = sc.nextInt();
 
-		if (age <= 13) {
-			System.out.println("어린이");
-		} else if (age <= 19) {
-			System.out.println("청소년");
-		} else {
-			System.out.println("청년");
-		}
+		System.out.println(age<=13 ? "어린이" : (age<=19 ? "청소년" : "청년"));
 
 	}
 
@@ -74,10 +68,7 @@ public class OperatorPractice {
 		System.out.println("합계 : " + sum);
 		System.out.println("평균 : " + avg);
 
-		if (avg >= 60)
-			System.out.println("합격");
-		else
-			System.out.println("불합격");
+		System.out.println(avg>=60 ? "합격" : "불합격");
 
 	}
 
