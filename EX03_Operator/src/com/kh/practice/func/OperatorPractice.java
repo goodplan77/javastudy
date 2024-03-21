@@ -33,7 +33,7 @@ public class OperatorPractice {
 
 		System.out.print("성별(M/F) : ");
 		char gender = sc.nextLine().charAt(0);
-		String genderAnswer = gender =='M' ? "남학생" : "여학생";
+		String genderAnswer = gender == 'M' ? "남학생" : "여학생";
 
 		System.out.print("성적(소수점 아래 둘째자리까지) : ");
 		double score = sc.nextDouble();
@@ -47,7 +47,7 @@ public class OperatorPractice {
 		System.out.print("나이 : ");
 		int age = sc.nextInt();
 
-		System.out.println(age<=13 ? "어린이" : (age<=19 ? "청소년" : "청년"));
+		System.out.println(age <= 13 ? "어린이" : (age <= 19 ? "청소년" : "청년"));
 
 	}
 
@@ -68,12 +68,12 @@ public class OperatorPractice {
 		System.out.println("합계 : " + sum);
 		System.out.println("평균 : " + avg);
 
-		System.out.println(avg>=60 ? "합격" : "불합격");
+		System.out.println(kor >= 40 && eng >= 40 && math >= 40 && avg >= 60 ? "합격" : "불합격");
 
 	}
 
 	public void practice5() {
-		System.out.print("주민 번호를 입력하세요. : ");
+		System.out.print("주민 번호를 입력하세요. (-포함) : ");
 		char number = sc.nextLine().charAt(7);
 
 		if (number == '1' || number == '3') {
@@ -99,62 +99,54 @@ public class OperatorPractice {
 
 		System.out.print("입력 : ");
 		int input = sc.nextInt();
-		
-		if(input <= num1 || input > num2) System.out.println(true);
-		else System.out.println(false);
+
+		if (input <= num1 || input > num2)
+			System.out.println(true);
+		else
+			System.out.println(false);
 
 	}
 
 	public void practice7() {
 		System.out.print("입력1 : ");
 		int num1 = sc.nextInt();
-		
+
 		System.out.print("입력2 : ");
 		int num2 = sc.nextInt();
-		
+
 		System.out.print("입력3 : ");
 		int num3 = sc.nextInt();
-		
-		if(num1 == num2){
-			if(num2 == num3)
-			{
-				System.out.println(true);
-			}
-			else
-			{
-				System.out.println(false);
-			}
-		} else
-		{
+
+		if (num1 == num2 && num2 == num3) {
+			System.out.println(true);
+		} else {
 			System.out.println(false);
 		}
 	}
 
 	public void practice8() {
-		
+
 		System.out.print("A사원의 연봉 : ");
 		int salaryA = sc.nextInt();
-		double finalSalaryA = salaryA*(1+0.4);
-		
+		double finalSalaryA = salaryA * (1 + 0.4);
+
 		System.out.print("B사원의 연봉 : ");
 		int salaryB = sc.nextInt();
 		double finalSalaryB = salaryB;
-		
+
 		System.out.print("C사원의 연봉 : ");
 		int salaryC = sc.nextInt();
-		double finalSalaryC = salaryC*(1+0.15);
-		
-		System.out.printf("A사원 연봉/연봉+a %d/%.1f\n" , salaryA , finalSalaryA);
+		double finalSalaryC = salaryC * (1 + 0.15);
+
+		System.out.printf("A사원 연봉/연봉+a %d/%.1f\n", salaryA, finalSalaryA);
 		System.out.println(finalSalaryA >= 3000 ? "3000이상" : "3000미만");
-		
-		System.out.printf("B사원 연봉/연봉+a %d/%.1f\n" , salaryB , finalSalaryB);
+
+		System.out.printf("B사원 연봉/연봉+a %d/%.1f\n", salaryB, finalSalaryB);
 		System.out.println(finalSalaryB >= 3000 ? "3000이상" : "3000미만");
-		
-		System.out.printf("C사원 연봉/연봉+a %d/%f\n" , salaryC , finalSalaryC);
+
+		System.out.printf("C사원 연봉/연봉+a %d/%f\n", salaryC, finalSalaryC);
 		System.out.println(finalSalaryC >= 3000 ? "3000이상" : "3000미만");
-		
-		
-		
+
 	}
 
 }
