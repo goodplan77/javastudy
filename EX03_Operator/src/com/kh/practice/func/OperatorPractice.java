@@ -93,6 +93,7 @@ public class OperatorPractice {
 
 	public void practice5() {
 		System.out.print("주민 번호를 입력하세요. : ");
+		//
 
 	}
 
