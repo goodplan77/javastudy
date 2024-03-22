@@ -107,13 +107,23 @@ public class ControlPractice {
 		System.out.print("비밀번호 : ");
 		String inputPassword = sc.nextLine();
 
-		if (!inputID.equals(ID)) {
+		/*if (!inputID.equals(ID)) {
 			System.out.println("아이디가 틀렸습니다.");
 
 		} else if (!inputPassword.equals(password)) {
 			System.out.println("비밀번호가 틀렸습니다.");
 		} else {
 			System.out.println("로그인 성공");
+		}*/
+		
+		if(inputID.equals(ID)) {
+			if(inputPassword.equals(password)) {
+				System.out.println("로그인 성공");
+			} else {
+				System.out.println("비밀번호가 틀렸습니다.");
+			}
+		} else {
+			System.out.println("아이디가 틀렸습니다.");
 		}
 	}
 
@@ -122,17 +132,15 @@ public class ControlPractice {
 		String outh = sc.nextLine();
 
 		switch (outh) {
-		case "관리자":
-			System.out.println("회원관리, 게시글 관리 게시글 작성, 댓글 작성, 게시글 조회");
-			break;
-		case "회원":
-			System.out.println("게시글 작성, 게시글 조회, 댓글 작성");
-			break;
-		case "비회원":
-			System.out.println("게시글 조회");
+		case "관리자" :
+			System.out.print("회원 관리 , 게시글 관리 , ");
+		case "회원" :
+			System.out.print("게시글 작성 , 댓글작성 , ");
+		case "비회원" :
+			System.out.print("게시글 조회");
 			break;
 		default:
-			System.out.println("잘못된 접근");
+			System.out.print("잘못된 접근");
 			break;
 		}
 	}
@@ -141,10 +149,12 @@ public class ControlPractice {
 		System.out.print("키(m)를 입력해 주세요. :");
 		double height = sc.nextDouble();
 
-		System.out.print("키(m)를 입력해 주세요. :");
+		System.out.print("몸무게(kg)를 입력해 주세요. :");
 		double weight = sc.nextDouble();
 
 		double bmi = weight / (height * height);
+		
+		System.out.println("BMI 지수 : " + bmi);
 
 		if (bmi < 18.5) {
 			System.out.println("저체중");
@@ -219,7 +229,7 @@ public class ControlPractice {
 
 		System.out.println("================= 결과 =================");
 
-		if (attendCount < 14) {
+		if (attendCount <= 14) {
 			System.out.printf("FAIL [출석횟수 부족(%d/20)]\n", attendCount);
 
 		} else {
