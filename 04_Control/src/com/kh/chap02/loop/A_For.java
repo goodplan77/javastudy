@@ -95,4 +95,90 @@ public class A_For {
 		}
 	}
 
+	public void method5() {
+		/* 1에서부터 랜덤값(1~10사이의 정수) 까지의 총 합계 
+		 * 
+		 * java.lang.Math 클래스에 정의되어 있는 random() 메소드를 호출하여 매번 다른 랜덤값을 얻어 올 수 있음.
+		 * 
+		 * 0.0 ~ 0.999999999 사이의 랜덤값 발생
+		 * 1미만의 값
+		 * 0.0 <= 랜덤값 < 1
+		 * 
+		 * [표현법]
+		 * Math.random() * 출력하고자 하는 갯수 + 시작수
+		 * 시작수 ~ (시작수 + 갯수)
+		 */
+		
+		int random = (int)(Math.random() * 45 + 1); // 1 ~46
+		
+		int sum = 0;
+		for(int i = 1 ; i <= random ; i++) {
+			sum+=i;
+		}
+		
+		System.out.println("random = " + random);
+		System.out.println("sum = " + sum);
+		
+	}
+	
+	public void method6() {
+		String str = "hello";
+		
+		/*
+		 * h -> str.charAt(0)
+		 * e -> str.charAt(1)
+		 * l -> str.charAt(2)
+		 * l -> str.charAt(3)
+		 * o -> str.charAt(4)
+		 * 
+		 * 문자열.legnth() ; 문자열 길이를 반환
+		 * ex) str.length -> 5
+		 */
+		
+		for(int i = 0 ; i < str.length() ; i++) {
+			System.out.print(str.charAt(i) + " ");
+		}
+	}
+	
+	public void method7() {
+		/*
+		 * 구구단 출력
+		 * 2 X 1 = 2
+		 * 2 X 2 = 4
+		 * 2 X 3 = 6
+		 * ...
+		 * 2 X 9 = 18
+		 */
+		
+		for(int i = 1 ; i <= 9 ; i++) {
+			System.out.printf("%d X %d = %d\n", 2, i ,2*i);
+		}
+	}
+	
+	public void method8() {
+		//2 ~ 9단 모두 출력
+		// 중첩 반복문
+		
+		for(int i = 2 ; i <= 9 ; i++) {
+			System.out.printf("==========%d 단==========\n",i);
+			for(int j = 1 ; j <= 9 ; j++) {
+				System.out.printf("%d X %d = %d\n",i,j,(i*j));
+			}
+			System.out.println();
+		}
+	}
+	
+	public void method9() {
+		for(int i = 1 ; i <= 5 ; i++) {
+			for(int j = 1 ; j <=5 ; j++) {
+				if(i==j) {
+					System.out.printf("%d " , j);
+				} else {
+					System.out.printf("* ");
+				}
+			}
+			System.out.println();
+		}
+	}
+
 }
