@@ -62,34 +62,34 @@ public class A_For {
 		System.out.println();
 
 		for (int i = 0; i <= 9; i++) {
-			System.out.print((i+1) + " ");
+			System.out.print((i + 1) + " ");
 		}
 	}
-	
+
 	public void method3() {
 		// 반복문을 활용해서 1부터 10까지의 총 합을 구함
-		
+
 		int sum = 0;
-		for(int i = 1 ; i<=10 ; i++) {
-			sum+=i;
+		for (int i = 1; i <= 10; i++) {
+			sum += i;
 		}
-		
+
 		System.out.println("1부터 10까지의 총 합 : " + sum);
 	}
-	
+
 	public void method4() {
 		// 스캐너를 활용한 1~n 까지의 총합 구하기
-		
+
 		Scanner sc = new Scanner(System.in);
 		System.out.print("양수를 입력하세요. ");
 		int num = sc.nextInt();
-		
-		if(num >=0) {
+
+		if (num > 0) {
 			int sum = 0;
-			for(int i = 1 ; i <=num ; i++) {
-				sum +=i;
+			for (int i = 1; i <= num; i++) {
+				sum += i;
 			}
-			System.out.printf("1에서 부터 %d까지의 총 합계 : %d\n" , num , sum);
+			System.out.printf("1에서 부터 %d까지의 총 합계 : %d\n", num, sum);
 		} else {
 			System.out.println("잘못 입력하셨습니다.");
 		}
