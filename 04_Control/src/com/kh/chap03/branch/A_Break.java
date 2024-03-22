@@ -18,7 +18,7 @@ public class A_Break {
 			int random = (int)(Math.random() * 100 + 1);
 			System.out.println("random : " + random);
 			
-			if(random % 13 ==0) {
+			if(random % 13 == 0) {
 				break;
 			}
 		}
