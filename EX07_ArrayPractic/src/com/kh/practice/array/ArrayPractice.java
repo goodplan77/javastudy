@@ -134,17 +134,64 @@ public class ArrayPractice {
 				int[] array = new int[input];
 				for (int i = 0; i < input; i++) {
 					if (i <= input / 2) {
-						array[i] = i;
+						array[i] = i + 1;
 					} else {
-						
+						array[i] = input - i;
 					}
 				}
 
 				for (int i = 0; i < input; i++) {
-					System.out.printf("%d, ", array[i]);
+					System.out.printf("%d", array[i]);
+					if (i != input - 1) {
+						System.out.print(", ");
+					}
 				}
 				System.out.println();
 				break;
+			}
+		}
+	}
+
+	public void practice9() {
+		String[] chicken = new String[4];
+		chicken[0] = "후라이드";
+		chicken[1] = "양념";
+		chicken[2] = "간장";
+		chicken[3] = "눈꽃";
+
+		System.out.print("치킨 이름을 입력하세요. : ");
+		String input = sc.nextLine();
+
+		boolean isTrue = false;
+
+		for (int i = 0; i < chicken.length; i++) {
+			if (chicken[i].equals(input)) {
+				System.out.printf("%s치킨 배달 가능\n", input);
+				isTrue = true;
+				break;
+			}
+		}
+
+		if (isTrue == false) {
+			System.out.printf("%s치킨은 없는 메뉴 입니다.\n", input);
+		}
+	}
+
+	public void practice10() {
+		System.out.print("주민등록번호(-포함) : ");
+		String input = sc.nextLine();
+
+		char[] inputArray = new char[input.length()];
+
+		for (int i = 0; i < input.length(); i++) {
+			inputArray[i] = input.charAt(i);
+		}
+
+		for (int i = 0; i < input.length(); i++) {
+			if (i <= 7) {
+				System.out.printf("%c", inputArray[i]);
+			} else {
+				System.out.print("*");
 			}
 		}
 	}
