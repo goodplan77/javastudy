@@ -8,31 +8,38 @@ public class LoopPractice {
 
 	public void practice1() {
 
-		int input = 0;
+		while (true) {
+			System.out.println("1 이상의 숫자를 입력하세요. :");
+			int input = sc.nextInt();
 
-		while (input <= 0) {
-			System.out.print("1이상의 숫자를 입력하세요 : ");
-			input = sc.nextInt();
+			if (input < 1) {
+				System.out.println("1 이상의 숫자를 입력해주세요.");
+				continue;
+			}
 
 			for (int i = 1; i <= input; i++) {
-				System.out.printf("%d ", i);
+				System.out.print(i + " ");
 			}
+
+			break;
 		}
 
 	}
 
 	public void practice2() {
 
-		int input = 0;
+		System.out.print("1이상의 숫자를 입력하세요 : ");
+		int input = sc.nextInt();
 
-		while (input <= 0) {
-			System.out.print("1이상의 숫자를 입력하세요 : ");
-			input = sc.nextInt();
-
+		if (input >= 1) {
 			for (int i = input; i >= 1; i--) {
 				System.out.printf("%d ", i);
 			}
+		} else {
+			System.out.println("1이상의 숫자를 입력해주세요.");
+			practice2();
 		}
+
 	}
 
 	public void practice3() {
@@ -43,62 +50,67 @@ public class LoopPractice {
 
 		for (int i = 1; i <= input; i++) {
 			sum += i;
-			System.out.printf("%d ", i);
-			if (i != input) {
-				System.out.print("+ ");
-			}
+			System.out.print(i + (i != input ? " + " : " = " + sum));
 		}
-
-		System.out.printf("= %d", sum);
-
 	}
 
 	public void practice4() {
-		int num1 = 0;
-		int num2 = 0;
 
-		while (num1 <= 0 || num2 <= 0) {
+		while (true) {
 			System.out.print("첫 번째 숫자 : ");
-			num1 = sc.nextInt();
+			int num1 = sc.nextInt();
 
 			System.out.print("두 번째 숫자 : ");
-			num2 = sc.nextInt();
+			int num2 = sc.nextInt();
 
-			if (num1 <= 0 || num2 <= 0) {
+			if (num1 < 1 || num2 < 1) {
 				System.out.println("1 이상의 숫자를 입력해주세요.");
-				continue;
+				practice4();
+				return;
+			} else {
+				if (num1 > num2) {
+					int temp = num1;
+					num1 = num2;
+					num2 = temp;
+				}
+
+				// 삼항 연산자를 이용한 크기 비교
+				// int start = num1 < num2 ? num1 : num2
+				// int end = num1 > num2 ? num1 : num2
+
+				for (int i = num1; i <= num2; i++) {
+					System.out.printf("%d ", i);
+				}
+
+				// 위의 예제를 사용 했을 경우
+				/*
+				 * for (int i = start ; i<=end ; i++) { System.out.printf("%d " , i) }
+				 */
+
+				return;
 			}
 
-			if (num1 > num2) {
-				int temp = num1;
-				num1 = num2;
-				num2 = temp;
-			}
-
-			for (int i = num1; i <= num2; i++) {
-				System.out.printf("%d ", i);
-			}
 		}
 	}
 
 	public void practice5() {
-		int input = 0;
-
-		while (input <= 0 || input > 9) {
+		while (true) {
 			System.out.print("숫자 : ");
-			input = sc.nextInt();
+			int input = sc.nextInt();
 
-			if (input <= 0 || input > 9) {
+			if (input < 2 || input > 9) {
 				System.out.println("9 이하의 숫자만 입력해주세요.");
 				continue;
+			} else {
+				for (int i = input; i <= 9; i++) {
+					System.out.printf("===== %d단 =====\n", i);
+					for (int j = 1; j <= 9; j++) {
+						System.out.printf("%d * %d = %d\n", i, j, (i * j));
+					}
+				}
+				break;
 			}
 
-			for (int i = input; i <= 9; i++) {
-				System.out.printf("===== %d단 =====\n", i);
-				for (int j = 1; j <= 9; j++) {
-					System.out.printf("%d * %d = %d\n", i, j, (i * j));
-				}
-			}
 		}
 
 	}
@@ -120,7 +132,7 @@ public class LoopPractice {
 
 		while (true) {
 			System.out.print("연산자(+, -, *, /, %) : ");
-			String input = sc.nextLine();
+			String input = sc.nextLine(); // 입력값이 "exit" 일때를 확인해야함
 
 			if (input.equals("exit")) {
 				System.out.println("프로그램을 종료합니다.");
@@ -137,7 +149,12 @@ public class LoopPractice {
 
 			sc.nextLine();
 
-			double sum = 0;
+			int sum = 0;
+
+			if ((operator == '/' || operator == '%') && num2 == 0) {
+				System.out.println("0으로 나눌 수 없습니다. 다시 입력해주세요.");
+				continue;
+			}
 
 			switch (operator) {
 			case '+':
@@ -150,11 +167,7 @@ public class LoopPractice {
 				sum = num1 * num2;
 				break;
 			case '/':
-				if (num1 == 0 || num2 == 0) {
-					System.out.println("0으로 나눌 수 없습니다. 다시 입력해주세요.");
-					continue;
-				}
-				sum = (double) num1 / num2;
+				sum = num1 / num2;
 				break;
 			case '%':
 				sum = num1 % num2;
@@ -164,8 +177,7 @@ public class LoopPractice {
 				continue;
 			}
 
-			System.out.printf("%d %c %d = %f\n", num1, operator, num2, sum);
-
+			System.out.printf("%d %c %d = %d\n", num1, operator, num2, sum);
 		}
 	}
 
@@ -194,6 +206,10 @@ public class LoopPractice {
 		}
 	}
 
+	// 소수 : 1 부터 n 까지로 나누 었을때 나누어 떨어지는 수가 1과 n뿐 인 수
+	// EX) n = 6
+	// 6의 경우 1~6까지의 수 중에서 , 2 와 3이 나누어 떨어짐 -> 소수 아님
+
 	public void practice10() {
 		System.out.print("숫자 : ");
 		int input = sc.nextInt();
@@ -203,14 +219,19 @@ public class LoopPractice {
 		} else if (input == 2) {
 			System.out.println("소수 입니다.");
 		} else {
+			boolean isPrimeNumber = true;
 			for (int i = 2; i < input; i++) {
 				if (input % i == 0) {
-					System.out.println("소수가 아닙니다.");
-					return;
+					isPrimeNumber = false;
+					break;
 				}
 			}
 
-			System.out.println("소수 입니다.");
+			if (isPrimeNumber == true)
+				System.out.println("소수 입니다.");
+			else
+				System.out.println("소수가 아닙니다.");
+
 		}
 	}
 
@@ -225,6 +246,7 @@ public class LoopPractice {
 			int count = 0;
 
 			for (int i = 2; i <= input; i++) {
+
 				boolean isPrimeNumber = true;
 
 				for (int j = 2; j < i; j++) {
@@ -252,10 +274,8 @@ public class LoopPractice {
 		for (int i = 1; i <= input; i++) {
 			if (i % 2 == 0 || i % 3 == 0) {
 				System.out.printf("%d ", i);
-			}
-
-			if (i % 2 == 0 && i % 3 == 0) {
-				count++;
+				if (i % 2 == 0 && i % 3 == 0)
+					count++;
 			}
 		}
 
