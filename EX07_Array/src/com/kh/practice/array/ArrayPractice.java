@@ -195,4 +195,179 @@ public class ArrayPractice {
 			}
 		}
 	}
+
+	public void practice11() {
+		int[] number = new int[10];
+		for (int i = 0; i < 10; i++) {
+			number[i] = (int) (Math.random() * 10 + 1);
+		}
+
+		for (int i = 0; i < 10; i++) {
+			System.out.printf("%d ", number[i]);
+		}
+	}
+
+	public void practice12() {
+		int[] number = new int[10];
+		int max = 0;
+		int min = 0;
+
+		for (int i = 0; i < 10; i++) {
+			number[i] = (int) (Math.random() * 10 + 1);
+
+			if (i == 0) {
+				max = number[i];
+				min = number[i];
+			}
+
+			if (max < number[i])
+				max = number[i];
+			if (min > number[i])
+				max = number[i];
+		}
+
+		for (int i = 0; i < 10; i++) {
+			System.out.printf("%d ", number[i]);
+		}
+
+		System.out.printf("\n최대값 : %d", max);
+		System.out.printf("\n최소값 : %d", min);
+	}
+
+	public void practice13() {
+		int[] number = new int[10];
+		for (int i = 0; i < 10; i++) {
+			number[i] = (int) (Math.random() * 10 + 1);
+
+			for (int j = 0; j < i; j++) {
+				if (number[i] == number[j]) {
+					i--;
+					break;
+				}
+			}
+		}
+
+		for (int i = 0; i < 10; i++) {
+			System.out.printf("%d ", number[i]);
+		}
+	}
+
+	public void practice14() {
+		int[] number = new int[6];
+		for (int i = 0; i < 6; i++) {
+			number[i] = (int) (Math.random() * 45 + 1);
+
+			for (int j = 0; j < i; j++) {
+				if (number[i] == number[j]) {
+					i--;
+					break;
+				}
+			}
+
+			for (int k = 0; k < i; k++) {
+				if (number[k] > number[i]) {
+					int temp = number[i];
+					number[i] = number[k];
+					number[k] = temp;
+				}
+			}
+		}
+
+		for (int i = 0; i < 6; i++) {
+			System.out.printf("%d ", number[i]);
+		}
+	}
+
+	public void practice15() {
+		System.out.print("문자열 : ");
+		String str = sc.nextLine();
+
+		int arrayLength = 0;
+
+		System.out.print("문자열에 있는 문자 : ");
+
+		for (int i = 0; i < str.length(); i++) {
+
+			boolean isDup = false;
+
+			for (int j = 0; j < i; j++) {
+				if (str.charAt(i) == str.charAt(j)) {
+					isDup = true;
+					break;
+				}
+			}
+
+			if (!isDup) {
+				System.out.printf("%c ", str.charAt(i));
+				arrayLength++;
+			}
+		}
+
+		System.out.printf("\n문자 개수 : %d\n", arrayLength);
+
+	}
+
+	public void practice16() {
+
+		int count = 0;
+
+		System.out.print("배열의 크기를 입력하세요 : ");
+		int input = sc.nextInt();
+		sc.nextLine();
+		String[] strs = new String[input];
+		String output = "";
+		for (int i = 0; i < input; i++) {
+			System.out.print((i + 1) + "번째 문자열 : ");
+			strs[i] = sc.nextLine();
+		}
+		
+		for(int j = 0 ; j < input ; j++) {
+			if(j == input-1) {
+				output = output + strs[j];
+			} else {
+				output = output + strs[j] + ", ";
+			}
+		}
+		
+		count += input;
+
+		while (true) {
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			char select = sc.nextLine().charAt(0);
+
+			if (select == 'y' || select == 'Y') {
+				output = output + ", "; 
+				System.out.print("더 입력하고 싶은 개수 : ");
+				input = sc.nextInt();
+				sc.nextLine();
+
+				strs = new String[input];
+				for (int i = 0; i < input; i++) {
+					System.out.print((count + (i+1)) + "번째 문자열 : ");
+					strs[i] = sc.nextLine();
+				}
+				
+				for(int j = 0 ; j < input ; j++) {
+					if(j == input-1) {
+						output = output + strs[j];
+					} else {
+						output = output + strs[j] + ", ";
+					}
+				}
+				
+				count += input;
+
+				continue;
+
+			} else if (select == 'n' || select == 'N') {
+				System.out.println("[" + output + "]");
+				break;
+
+			} else {
+				System.out.println("에러");
+			}
+		}
+
+	}
+
 }
