@@ -1,3 +1,5 @@
+# javastudy
+
 2024.03.19 ~ 2024.04.23
 
 
@@ -5,24 +7,37 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 
 ---------------------------
 
-03.19 레퍼지토리 생성
+## 기본 수업 진행
+
+03.20 레퍼지토리 생성 (01_FirstProject)
 
 
-03.20 연산자 (Operator)
+03.20 변수 (02_Variable)
 
 
-03.21 제어문 (Control - Condition)
+03.20 연산자 (03_Operator)
 
 
-03.22 반복문 (Control - Loop)
+03.21 제어문 (04_Control / Condition)
 
 
-03.22 분기문 (Control - branch)
+03.22 반복문 (04_Control / Loop)
 
 
-03.25 배열 (Array)
+03.22 분기문 (04_Control / branch)
 
+
+03.25 배열 (05_Array)
 
 
 ---------------------------
 
+## 실습 과제 
+
+1. 기본 실습  (EX01_Practice)
+2. 변수  (EX02_Variable)
+3. 연산자 (EX03_Operator)
+4. 제어 기본  (EX04_Control)
+5. 반복  (EX05_Loop)
+6. 제어 및 반복 종합 문제 (EX06_CompExample)
+7. 배열  (EX07_Array)
