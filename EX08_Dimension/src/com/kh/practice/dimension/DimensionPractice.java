@@ -238,7 +238,6 @@ public class DimensionPractice {
 				} else if (input.equals(arrange2[i][j])) {
 					System.out.println(p9_position_method(input, 1, i, j));
 					break;
-
 				}
 			}
 		}
