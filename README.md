@@ -41,3 +41,4 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 5. 반복  (EX05_Loop)
 6. 제어 및 반복 종합 문제 (EX06_CompExample)
 7. 배열  (EX07_Array)
+8. 2차원 배열 (EX08_Dimension)
