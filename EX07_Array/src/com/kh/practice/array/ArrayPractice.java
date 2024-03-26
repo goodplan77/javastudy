@@ -1,5 +1,6 @@
 package com.kh.practice.array;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayPractice {
@@ -180,19 +181,23 @@ public class ArrayPractice {
 	public void practice10() {
 		System.out.print("주민등록번호(-포함) : ");
 		String input = sc.nextLine();
-
 		char[] inputArray = new char[input.length()];
 
 		for (int i = 0; i < input.length(); i++) {
 			inputArray[i] = input.charAt(i);
 		}
 
-		for (int i = 0; i < input.length(); i++) {
-			if (i <= 7) {
-				System.out.printf("%c", inputArray[i]);
-			} else {
-				System.out.print("*");
-			}
+		char[] dupArray = new char[input.length()];
+		// char[] dupArray = inputArray.clone();
+
+		System.arraycopy(inputArray, 0, dupArray, 0, 8);
+
+		for (int j = 8; j < input.length(); j++) {
+			dupArray[j] = '*';
+		}
+
+		for (int k = 0; k < input.length(); k++) {
+			System.out.printf("%c", dupArray[k]);
 		}
 	}
 
@@ -256,22 +261,24 @@ public class ArrayPractice {
 		int[] number = new int[6];
 		for (int i = 0; i < 6; i++) {
 			number[i] = (int) (Math.random() * 45 + 1);
-
-			for (int j = 0; j < i; j++) {
-				if (number[i] == number[j]) {
-					i--;
-					break;
-				}
-			}
-
-			for (int k = 0; k < i; k++) {
-				if (number[k] > number[i]) {
-					int temp = number[i];
-					number[i] = number[k];
-					number[k] = temp;
-				}
-			}
 		}
+
+		Arrays.sort(number);
+		/*
+		 * for (int i = 0; i < 6; i++) { number[i] = (int) (Math.random() * 45 + 1);
+		 * 
+		 * for (int j = 0; j < i; j++) { if (number[i] == number[j]) { i--; break; } }
+		 * 
+		 * for (int k = 0; k < i; k++) { if (number[k] > number[i]) { int temp =
+		 * number[i]; number[i] = number[k]; number[k] = temp; } } }
+		 */
+
+		/*
+		 * int []random = new int[45];
+		 * 
+		 * for(int i = 0 ; number.length) { int ran = (int)(Math.random()*45+1);
+		 * if(random[ran-1]==0) { number[i] = ran; random[ran-1] = 1; } }
+		 */
 
 		for (int i = 0; i < 6; i++) {
 			System.out.printf("%d ", number[i]);
@@ -282,85 +289,84 @@ public class ArrayPractice {
 		System.out.print("문자열 : ");
 		String str = sc.nextLine();
 
-		int arrayLength = 0;
+		char[] origin = str.toCharArray();
+		char[] copy = new char[origin.length];
 
-		System.out.print("문자열에 있는 문자 : ");
-
-		for (int i = 0; i < str.length(); i++) {
-
-			boolean isDup = false;
-
+		for (int i = 0; i < origin.length; i++) {
+			copy[i] = origin[i];
 			for (int j = 0; j < i; j++) {
-				if (str.charAt(i) == str.charAt(j)) {
-					isDup = true;
+				if (copy[j] == origin[i]) { // 중복값 찾기 완료
+					copy[i] = ' ';
 					break;
 				}
 			}
-
-			if (!isDup) {
-				System.out.printf("%c ", str.charAt(i));
-				arrayLength++;
+		}
+		int count = 0;
+		System.out.print("문자열에 있는 문자 : ");
+		for (int i = 0; i < copy.length; i++) {
+			if (copy[i] == '\0') {
+				continue;
+			} else {
+				System.out.print(copy[i] + (i != copy.length - 1 ? "," : " "));
+				count++;
 			}
 		}
+		
+		System.out.println();
+		System.out.print("문자 개수 : " + count);
 
-		System.out.printf("\n문자 개수 : %d\n", arrayLength);
+		/*
+		 * int arrayLength = 0;
+		 * 
+		 * System.out.print("문자열에 있는 문자 : ");
+		 * 
+		 * for (int i = 0; i < str.length(); i++) {
+		 * 
+		 * boolean isDup = false;
+		 * 
+		 * for (int j = 0; j < i; j++) { if (str.charAt(i) == str.charAt(j)) { isDup =
+		 * true; break; } }
+		 * 
+		 * if (!isDup) { System.out.printf("%c ", str.charAt(i)); arrayLength++; } }
+		 * 
+		 * System.out.printf("\n문자 개수 : %d\n", arrayLength);
+		 */
 
 	}
 
 	public void practice16() {
 
-		int count = 0;
-
 		System.out.print("배열의 크기를 입력하세요 : ");
 		int input = sc.nextInt();
 		sc.nextLine();
 		String[] strs = new String[input];
-		String output = "";
 		for (int i = 0; i < input; i++) {
 			System.out.print((i + 1) + "번째 문자열 : ");
 			strs[i] = sc.nextLine();
 		}
-		
-		for(int j = 0 ; j < input ; j++) {
-			if(j == input-1) {
-				output = output + strs[j];
-			} else {
-				output = output + strs[j] + ", ";
-			}
-		}
-		
-		count += input;
 
 		while (true) {
 			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
 			char select = sc.nextLine().charAt(0);
 
 			if (select == 'y' || select == 'Y') {
-				output = output + ", "; 
 				System.out.print("더 입력하고 싶은 개수 : ");
 				input = sc.nextInt();
 				sc.nextLine();
 
-				strs = new String[input];
-				for (int i = 0; i < input; i++) {
-					System.out.print((count + (i+1)) + "번째 문자열 : ");
-					strs[i] = sc.nextLine();
-				}
-				
-				for(int j = 0 ; j < input ; j++) {
-					if(j == input-1) {
-						output = output + strs[j];
-					} else {
-						output = output + strs[j] + ", ";
-					}
-				}
-				
-				count += input;
+				String[] addStrs = new String[strs.length + input];
+				System.arraycopy(strs, 0, addStrs, 0, strs.length);
 
+				for (int i = strs.length; i < addStrs.length; i++) {
+					System.out.print((i + 1) + "번째 문자열 : ");
+					addStrs[i] = sc.nextLine();
+				}
+
+				strs = addStrs;
 				continue;
 
 			} else if (select == 'n' || select == 'N') {
-				System.out.println("[" + output + "]");
+				System.out.println(Arrays.toString(strs));
 				break;
 
 			} else {
