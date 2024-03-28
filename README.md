@@ -30,6 +30,12 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 03.25 배열 (05_Array)
 
 
+03.27 객체 (06_Object)
+
+
+03.28 객체 배열 (07_ObjectArray)
+
+
 ---------------------------
 
 ## 실습 과제 
@@ -43,3 +49,5 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 7. 배열  (EX07_Array)
 8. 2차원 배열 (EX08_Dimension)
 9. OOP과제1 (Homework2_OOP)
+10. OOP과제2 (Homework2_OOP2)
+11. 객체배열 (Homework3_ObjectArray)
