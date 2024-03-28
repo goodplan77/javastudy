@@ -4,7 +4,7 @@ import com.kh.hw.shape.model.vo.Shape;
 
 public class TriangleController {
 
-	private Shape s;
+	private Shape s = new Shape();
 
 	public double calcArea(double height, double width) {
 		s = new Shape(0, height, width);
