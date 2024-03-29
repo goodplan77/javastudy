@@ -36,6 +36,9 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 03.28 객체 배열 (07_ObjectArray)
 
 
+03.29 상속 (08_Inheritance)
+
+
 ---------------------------
 
 ## 실습 과제 (Practice)
@@ -51,3 +54,4 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 9. OOP과제1 (Homework2_OOP)
 10. OOP과제2 (Homework2_OOP2)
 11. 객체배열 (Homework3_ObjectArray)
+12. 상속 (Homework4_Inheritance)
