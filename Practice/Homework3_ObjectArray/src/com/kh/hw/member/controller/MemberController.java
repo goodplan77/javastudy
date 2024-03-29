@@ -57,7 +57,7 @@ public class MemberController {
 			if (temp == null) {
 				continue;
 			}
-			if (temp.getId().equals(name)) {
+			if (temp.getName().equals(name)) {
 				tempArray[count++] = temp;
 			}
 		}
@@ -80,7 +80,7 @@ public class MemberController {
 			if (temp == null) {
 				continue;
 			}
-			if (temp.getId().equals(email)) {
+			if (temp.getEmail().equals(email)) {
 				tempArray[count++] = temp;
 			}
 		}
@@ -116,7 +116,7 @@ public class MemberController {
 				continue;
 			}
 			if (temp.getId().equals(id)) {
-				temp.setPassword(name);
+				temp.setName(name);
 				return true;
 			}
 		}
@@ -130,7 +130,7 @@ public class MemberController {
 				continue;
 			}
 			if (temp.getId().equals(id)) {
-				temp.setPassword(email);
+				temp.setEmail(email);
 				return true;
 			}
 		}

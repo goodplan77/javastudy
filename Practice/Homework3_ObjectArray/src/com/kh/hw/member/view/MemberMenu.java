@@ -155,7 +155,7 @@ public class MemberMenu {
 	}
 
 	public void searchId() {
-		System.out.println("검색할 아이디 : ");
+		System.out.print("검색할 아이디 : ");
 		String inputId = sc.nextLine();
 
 		if (mc.searchId(inputId) != null) {
@@ -166,7 +166,7 @@ public class MemberMenu {
 	}
 
 	public void searchName() {
-		System.out.println("검색할 이름 : ");
+		System.out.print("검색할 이름 : ");
 		String inputName = sc.nextLine();
 
 		if (mc.searchName(inputName) != null) {
@@ -180,7 +180,7 @@ public class MemberMenu {
 	}
 
 	public void searchEmail() {
-		System.out.println("검색할 이메일 : ");
+		System.out.print("검색할 이메일 : ");
 		String inputEmail = sc.nextLine();
 
 		if (mc.searchEmail(inputEmail) != null) {
@@ -322,7 +322,7 @@ public class MemberMenu {
 		} else {
 			for (Member temp : mc.printAll()) {
 				if (temp != null) {
-					System.out.println("주소값 : "+ temp + " " + temp.inform());
+					System.out.println(temp.inform());
 				}
 			}
 		}
