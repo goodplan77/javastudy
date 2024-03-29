@@ -10,7 +10,7 @@ public class Member {
 	private int age;
 	
 	public Member () {
-		
+
 	}
 
 	public Member(String id, String name, String password, String email, char gender, int age) {
@@ -23,9 +23,10 @@ public class Member {
 	}
 	
 	public String inform() {
-		return "";
+		return id + " " + name + " " + password + " " + email + " "
+				+ gender + " " + age;
 	}
-
+	
 	public String getId() {
 		return id;
 	}
@@ -73,5 +74,7 @@ public class Member {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+
 
 }
