@@ -114,8 +114,20 @@ public class MemberMenu {
 		System.out.print("이메일 : ");
 		String inputEmail = sc.nextLine();
 
-		System.out.print("성별(M/F) : ");
-		String inputGender = sc.nextLine();
+		String inputGender = "";
+
+		while (true) {
+
+			System.out.print("성별(M/F) : ");
+			inputGender = sc.nextLine();
+			if (inputGender.charAt(0) == 'M' || inputGender.charAt(0) == 'm' || inputGender.charAt(0) == 'F'
+					|| inputGender.charAt(0) == 'f') {
+				break;
+			} else {
+				System.out.println("성별을 다시 입력하세요.");
+				continue;
+			}
+		}
 
 		System.out.print("나이 : ");
 		int inputAge = sc.nextInt();
