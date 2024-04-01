@@ -26,6 +26,8 @@ public class PersonMenu {
 			System.out.print("메뉴 번호 : ");
 			int menuSelect = sc.nextInt();
 			sc.nextLine();
+			
+			System.out.println();
 
 			switch (menuSelect) {
 			case 1:
@@ -59,6 +61,8 @@ public class PersonMenu {
 			System.out.print("메뉴 번호 : ");
 			int menuSelect = sc.nextInt();
 			sc.nextLine();
+			
+			System.out.println();
 
 			switch (menuSelect) {
 			case 1: {
@@ -74,6 +78,7 @@ public class PersonMenu {
 				break;
 			case 9:
 				System.out.println("메인으로 돌아갑니다.");
+				System.out.println();
 				return;
 			default:
 				System.out.println("잘못 입력하셨습니다.");
@@ -95,6 +100,8 @@ public class PersonMenu {
 			System.out.print("메뉴 번호 : ");
 			int menuSelect = sc.nextInt();
 			sc.nextLine();
+			
+			System.out.println();
 
 			switch (menuSelect) {
 			case 1: {
@@ -110,6 +117,7 @@ public class PersonMenu {
 				break;
 			case 9:
 				System.out.println("메인으로 돌아갑니다.");
+				System.out.println();
 				return;
 			default:
 				System.out.println("잘못 입력하셨습니다.");
@@ -201,6 +209,7 @@ public class PersonMenu {
 				}
 			} else {
 				System.out.println("학생을 담을 수 있는 공간이 꽉 찼기 때문에 학생 추가를 종료하고 학생 메뉴로 돌아갑니다");
+				System.out.println();
 				break;
 			}
 		}
