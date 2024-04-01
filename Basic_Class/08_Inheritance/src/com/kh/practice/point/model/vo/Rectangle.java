@@ -8,10 +8,10 @@ public class Rectangle extends Point {
 	public Rectangle() {
 	}
 
-	public Rectangle(int x, int y , int width , int height) {
+	public Rectangle(int x, int y , int height , int width) {
 		super(x, y);
-		this.width = width;
 		this.height = height;
+		this.width = width;
 	}
 
 	public int getWidth() {
