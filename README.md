@@ -39,7 +39,10 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 03.29 [상속 (08_Inheritance)](https://juvenile-credit-074.notion.site/08-bb9180d6645445208b94529b8441bbf4?pvs=4)
 
 
-04.01 다형성 (09_Polymorphism)
+04.01 [다형성 (09_Polymorphism)](https://juvenile-credit-074.notion.site/09-549a5be7dcb44b9bb4891cf13bf758a4?pvs=4)
+
+
+04.01 [추상 및 인터페이스 (09_Polymorphism)](https://juvenile-credit-074.notion.site/10-d13c543115c34acb840bbf397c001989?pvs=4)
 
 
 04.02 API
