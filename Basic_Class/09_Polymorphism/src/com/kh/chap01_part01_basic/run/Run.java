@@ -16,7 +16,7 @@ public class Run {
 		
 		System.out.println("2. 자식타입 참조변수로 자식타입 객체 다루기");
 		Child1 c1 = new Child1();
-		((Parent)c1).printParent(); // 부모객체 메서드 사용 가능
+		c1.printParent(); // 부모객체 메서드 사용 가능
 		c1.printChild1();
 		
 		// c1 참조변수로 Parent , Child1 주소값에 접근 가능

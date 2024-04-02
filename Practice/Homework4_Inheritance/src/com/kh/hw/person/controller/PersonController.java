@@ -1,5 +1,7 @@
 package com.kh.hw.person.controller;
 
+import java.util.Arrays;
+
 import com.kh.hw.person.model.vo.Employee;
 import com.kh.hw.person.model.vo.Student;
 
@@ -9,27 +11,20 @@ public class PersonController {
 	private Employee[] e = new Employee[10];
 
 	public int[] personCount() {
-		int studentCount = 0;
-		int empolyeeCount = 0;
+		int[] personCount = new int[2];
 
 		for (Student temp1 : s) {
 			if (temp1 != null) {
-				studentCount++;
+				personCount[0]++;
 			}
 		}
 
 		for (Employee temp2 : e) {
 			if (temp2 != null) {
-				empolyeeCount++;
+				personCount[1]++;
 			}
 		}
-
-		int[] personCount = new int[2];
-		personCount[0] = studentCount;
-		personCount[1] = empolyeeCount;
-
 		return personCount;
-
 	}
 
 	public void insertStudent(String name, int age, double height, double weight, int grade, String major) {
@@ -45,7 +40,13 @@ public class PersonController {
 	}
 
 	public Student[] printStudent() {
-		return s;
+		//깊은 복사를 통한 값만 복사
+		Student[] copy1 = new Student[3];
+		System.arraycopy(s, 0, copy1, 0, personCount()[0]);
+		
+		//
+		Student[] copy2 = Arrays.copyOf(s, personCount()[0]);
+		return copy1;
 	}
 
 	public void insertEmployee(String name, int age, double height, double weight, int salary, String dept) {
@@ -61,7 +62,9 @@ public class PersonController {
 	}
 
 	public Employee[] printEmployee() {
-		return e;
+		Employee[] copy1 = new Employee[10];
+		System.arraycopy(e, 0, copy1, 0, personCount()[1]);
+		return copy1;
 	}
 
 }
