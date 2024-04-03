@@ -15,21 +15,27 @@ public class TokenController {
 			sb.append(st.nextToken());
 		}
 		return sb.toString();
-		//return String.join("", str.split(" "));
+		// return String.join("", str.split(" "));
 	}
 
 	public String firstCap(String input) {
-		char temp1 = input.charAt(0);
-		String temp2 = input.substring(1);
-		if (temp1 >= 97 && temp1 <= 122) {
-			temp1 = (char) (temp1 - 32);
-		}
 
-		return temp1 + temp2;
+		// input.split("");
+
+		char temp = input.toUpperCase().charAt(0);
+
+		/*
+		 * if (temp >= 97 && temp <= 122) { temp = (char) (temp - 32); }
+		 */
+
+		return String.valueOf(temp).concat(input.substring(1));
 
 	}
 
 	public int findChar(String input, char one) {
+		// char[] arr = input.toCharArray();
+		// for(char ch : arr) {if(ch == one) count++;}
+		
 		int count = 0;
 		for (int i = 0; i < input.length(); i++) {
 			if (input.charAt(i) == one) {

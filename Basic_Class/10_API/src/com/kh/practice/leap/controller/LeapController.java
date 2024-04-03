@@ -16,8 +16,8 @@ public class LeapController {
 		long sum = 0;
 		int thisYear = c.get(Calendar.YEAR);
 		int thisMonth = c.get(Calendar.MONTH) + 1;
-		int thisDay = c.get(Calendar.DAY_OF_MONTH);
-
+		int thisDay = c.get(Calendar.DATE);
+		
 		for (int i = 1; i < thisYear; i++) {
 			if (isLeapYear(i)) {
 				sum += 366;

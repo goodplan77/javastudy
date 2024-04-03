@@ -50,8 +50,7 @@ public class TokenMenu {
 	public void inputMenu() {
 		System.out.print("문자열을 입력하세요 : ");
 		String input = sc.nextLine();
-		input = tc.firstCap(input);
-		System.out.println("첫 글자 대문자 : " + input);
+		System.out.println("첫 글자 대문자 : " + tc.firstCap(input));
 
 		System.out.print("찾을 문자 하나를 입력하세요 : ");
 		char inputSearch = sc.nextLine().charAt(0);
