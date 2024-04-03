@@ -15,6 +15,7 @@ public class TokenController {
 			sb.append(st.nextToken());
 		}
 		return sb.toString();
+		//return String.join("", str.split(" "));
 	}
 
 	public String firstCap(String input) {

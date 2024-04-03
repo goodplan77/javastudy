@@ -7,28 +7,17 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 
 ## 기본 수업 진행 (Basic_Class)
 
-1. 레퍼지토리 생성 (01_FirstProject) 03.20
-
-2. 변수 (02_Variable) 03.20
-
-3. 연산자 (03_Operator) 03.20
-
-4. 제어 (04_Control) 03.21
-
-5. 배열 (05_Array) 03.25
-
-6. 객체 (06_Object) 03.27
-
-7. 객체 배열 (07_ObjectArray) 03.28
-
-8. 상속 (08_Inheritance) 03.29
-
-9. 다형성 (09_Polymorphism) 04.01
-
-10. 추상 및 인터페이스 (09_Polymorphism) 04.01
-
-11. API (10_API) 04.02
-
+1. **레퍼지토리 생성**  (01_FirstProject)
+2. **변수** (02_Variable)
+3. **연산자**   (03_Operator)
+4. **제어** (04_Control)
+5. **배열** (05_Array)
+6. **객체** (06_Object)
+7. **객체 배열**    (07_ObjectArray)
+8. **상속** (08_Inheritance)
+9. **다형성**   (09_Polymorphism)
+10. **추상 및 인터페이스**  (09_Polymorphism)
+11. **API** (10_API)
 
 ## 실습 과제 (Practice)
 
