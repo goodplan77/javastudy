@@ -5,50 +5,30 @@
 
 JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositories 입니다.
 
----------------------------
-
 ## 기본 수업 진행 (Basic_Class)
 
-03.20 레퍼지토리 생성 (01_FirstProject)
+1. 레퍼지토리 생성 (01_FirstProject) 03.20
 
+2. 변수 (02_Variable) 03.20
 
-03.20 변수 (02_Variable)
+3. 연산자 (03_Operator) 03.20
 
+4. 제어 (04_Control) 03.21
 
-03.20 연산자 (03_Operator)
+5. 배열 (05_Array) 03.25
 
+6. 객체 (06_Object) 03.27
 
-03.21 제어문 (04_Control / Condition)
+7. 객체 배열 (07_ObjectArray) 03.28
 
+8. 상속 (08_Inheritance) 03.29
 
-03.22 반복문 (04_Control / Loop)
+9. 다형성 (09_Polymorphism) 04.01
 
+10. 추상 및 인터페이스 (09_Polymorphism) 04.01
 
-03.22 분기문 (04_Control / branch)
+11. API (10_API) 04.02
 
-
-03.25 [배열 (05_Array)](https://juvenile-credit-074.notion.site/05-814e41ab033a41d58a32e2398e59c8cd?pvs=4)
-
-
-03.27 [객체 (06_Object)](https://juvenile-credit-074.notion.site/06-46b95c00ee6d478596dc51cbe6023b37?pvs=4)
-
-
-03.28 [객체 배열 (07_ObjectArray)](https://juvenile-credit-074.notion.site/07-02837ecc4d3e48f9b8d17f92d3497a68?pvs=4)
-
-
-03.29 [상속 (08_Inheritance)](https://juvenile-credit-074.notion.site/08-bb9180d6645445208b94529b8441bbf4?pvs=4)
-
-
-04.01 [다형성 (09_Polymorphism)](https://juvenile-credit-074.notion.site/09-549a5be7dcb44b9bb4891cf13bf758a4?pvs=4)
-
-
-04.01 [추상 및 인터페이스 (09_Polymorphism)](https://juvenile-credit-074.notion.site/10-d13c543115c34acb840bbf397c001989?pvs=4)
-
-
-04.02 API
-
-
----------------------------
 
 ## 실습 과제 (Practice)
 
