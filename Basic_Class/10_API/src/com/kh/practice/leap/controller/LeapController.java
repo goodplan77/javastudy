@@ -1,6 +1,7 @@
 package com.kh.practice.leap.controller;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class LeapController {
 
@@ -18,6 +19,7 @@ public class LeapController {
 		int thisMonth = c.get(Calendar.MONTH) + 1;
 		int thisDay = c.get(Calendar.DATE);
 		
+
 		for (int i = 1; i < thisYear; i++) {
 			if (isLeapYear(i)) {
 				sum += 366;
@@ -25,7 +27,12 @@ public class LeapController {
 				sum += 365;
 			}
 		}
-
+		
+		Calendar temp = Calendar.getInstance();
+		temp.set(thisYear,0,1,0,0,0);
+		sum += ((c.getTimeInMillis() - temp.getTimeInMillis())/1000/60/60/24);
+		
+		/*
 		for (int j = 1; j < thisMonth; j++) {
 			switch (j) {
 			case 1, 3, 5, 7, 8, 10, 12:
@@ -47,6 +54,7 @@ public class LeapController {
 		}
 
 		sum += thisDay;
+		*/
 
 		return sum;
 	}
