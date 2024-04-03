@@ -33,7 +33,7 @@ public class LibraryController {
 		Book[] temp = new Book[5];
 		int count = 0;
 		for (Book search : bList) {
-			if (search.toString().contains(keyword)) {
+			if (search.getTitle().contains(keyword)) {
 				temp[count++] = search;
 			}
 		}
@@ -42,23 +42,13 @@ public class LibraryController {
 	}
 
 	public int rentBook(int index) {
-		int result = -1;
+		int result = 0;
 
-		if (bList[index] instanceof AniBook) {
-			if (((AniBook) bList[index]).getAccessAge() > mem.getAge()) {
-				result = 1;
-
-			} else {
-				result = 0;
-			}
-
-		} else if (bList[index] instanceof CookBook) {
-			if (((CookBook) bList[index]).isCoupon()) {
-				mem.setCouponCount(mem.getCouponCount() + 1);
-				result = 2;
-			} else {
-				result = 0;
-			}
+		if (bList[index] instanceof AniBook && ((AniBook) bList[index]).getAccessAge() > mem.getAge()) {
+			result = 1;
+		} else if (bList[index] instanceof CookBook && ((CookBook) bList[index]).isCoupon()) {
+			mem.setCouponCount(mem.getCouponCount() + 1);
+			result = 2;
 		}
 
 		return result;

@@ -21,7 +21,7 @@ public class LibraryMenu {
 		System.out.print("성별 : ");
 		String inputGender = sc.nextLine();
 
-		Member temp = new Member(inputName, inputAge, inputGender.charAt(0));
+		Member temp = new Member(inputName, inputAge, inputGender.toUpperCase().charAt(0));
 		lc.insertMember(temp);
 
 		while (true) {
@@ -39,30 +39,34 @@ public class LibraryMenu {
 			switch (menuSelect) {
 			case 1:
 				System.out.println(lc.myInfo().toString());
+				System.out.println();
 				break;
 			case 2:
 				selectAll();
+				System.out.println();
 				break;
 			case 3:
 				searchBook();
+				System.out.println();
 				break;
 			case 4:
 				rentBook();
+				System.out.println();
 				break;
 			case 9:
 				System.out.println("프로그램을 종료합니다.");
 				return;
 			default:
 				System.out.println("잘못 입력하셨습니다.");
+				System.out.println();
 			}
 		}
 	}
 
 	public void selectAll() {
 		for (int i = 0; i < 5; i++) {
-			System.out.println(i + "번 도서 : " + lc.selectAll()[i].toString());
+			System.out.println(i + "번 도서 : " + lc.selectAll()[i]);
 		}
-		System.out.println();
 	}
 
 	public void searchBook() {
@@ -71,15 +75,9 @@ public class LibraryMenu {
 
 		Book[] result = lc.searchBook(inputWord);
 
-		if (result == null) {
-			System.out.println();
-			return;
-		} else {
-			for (Book temp : result) {
-				System.out.println(temp.toString());
-			}
+		for (Book temp : result) {
+			System.out.println(temp);
 		}
-		System.out.println();
 	}
 
 	public void rentBook() {
@@ -99,11 +97,9 @@ public class LibraryMenu {
 			System.out.println("성공적으로 대여되었습니다. 요리학원 쿠폰이 발급되었으니 마이페이지에서 확인하세요");
 			break;
 		default:
-			System.out.println("오류 발생");
+			System.out.println("오류발생");
 			break;
 		}
-
-		System.out.println();
 	}
 
 }
