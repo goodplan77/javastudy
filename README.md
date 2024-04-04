@@ -15,23 +15,23 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 <details>
 <summary>02 변수    (02_Variable)  </summary>
 
-1. 변수 기본 개념
-2. 키보드 입력
-3. 형변환
-4. 화면 출력
+1. 변수 기본 개념 (A_Variable)
+2. 키보드 입력 (B_KeyboardInput)
+3. 형변환 (C_Cast)
+4. 화면 출력 (D_Printf)
 </details>
 
 
 <details>
 <summary>03 연산자  (03_Operator) </summary>
 
-1. 기본 사칙 연산
-2. 증감 연산자
-3. 복합대입 연산자
-4. 논리 부정 연산자
-5. 비교 연산자
-6. 논리 연산자
-7. 삼항 연산자
+1. 기본 사칙 연산 (A_Arithmetic)
+2. 증감 연산자 (B_InDecrease)
+3. 복합대입 연산자 (C_Compound)
+4. 논리 부정 연산자 (D_LogicalNegation)
+5. 비교 연산자 (E_Comparison)
+6. 논리 연산자 (F_Logical)
+7. 삼항 연산자 (G_Triple)
 </details>
 
 
@@ -47,9 +47,9 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 <details>
 <summary>05 배열    (05_Array) </summary>
 
-1. 배열
-2. 배열 복사
-3. 2차원 배열
+1. 배열 (A_Array)
+2. 배열 복사 (B_ArrayCopy)
+3. 2차원 배열 (C_DimensionlArray)
 </details>
 
 
@@ -101,6 +101,26 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 3. Wrapper 클래스 (chap03_wrapper.run)
 4. Date , Calendar 클래스 (chap04_data.run)
 5. 실습문제 (practice)
+</details>
+
+
+<details>
+<summary>11 예외 (11_Exception) </summary>
+
+1. 예측 가능 예외 (A_UncheckedException)
+2. 예측 불가능 예외 (B_CheckedException)
+3. 커스텀 예외 (C_CustomException)
+4. 실습 문제 1_문자공백 (practice.charCheck)
+5. 실습 문제 2_정수범위 (practice.numRange)
+
+</details>
+
+
+<details>
+<summary>12 입출력 (12_IO) </summary>
+
+
+
 </details>
 
 
