@@ -16,7 +16,7 @@ public class LeapController {
 	public long leapDate(Calendar c) {
 		long sum = 0;
 		int thisYear = c.get(Calendar.YEAR);
-		int thisMonth = c.get(Calendar.MONTH) + 1;
+		int thisMonth = c.get(Calendar.MONTH);
 		int thisDay = c.get(Calendar.DATE);
 		
 
@@ -28,11 +28,14 @@ public class LeapController {
 			}
 		}
 		
-		Calendar temp = Calendar.getInstance();
-		temp.set(thisYear,0,1,0,0,0);
-		sum += ((c.getTimeInMillis() - temp.getTimeInMillis())/1000/60/60/24);
-		
 		/*
+		Calendar c2 = new GregorianCalendar(2023,11,31,23,59,59);
+		long currentTime = c.getTimeInMillis();
+		long oldTime = c2.getTimeInMillis();
+		long diff = (currentTime-oldTime) / 1000 / 60 / 60 / 24 ;
+		sum += diff;
+		*/
+		
 		for (int j = 1; j < thisMonth; j++) {
 			switch (j) {
 			case 1, 3, 5, 7, 8, 10, 12:
@@ -54,8 +57,7 @@ public class LeapController {
 		}
 
 		sum += thisDay;
-		*/
-
+		
 		return sum;
 	}
 
