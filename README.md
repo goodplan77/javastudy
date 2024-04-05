@@ -119,7 +119,15 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 <details>
 <summary>12 입출력 (12_IO) </summary>
 
--- 수정중 --
+- 기본 개념 
+    1. 스트림 기본 개념 (chap01_file.run)
+    2. 바이트 기반 스트림 (chap02_byte)
+    3. 문자 기반 스트림 (chap03_char)
+    4. 보조 스트림 (chap04_assist)
+- 실습 문제
+    1. 문자 출력 (practice.file)
+    2. 점수 출력 (practice.score)
+    3. 객체 출력 (practice.book)
 </details>
 
 
