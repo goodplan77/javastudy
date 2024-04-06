@@ -63,16 +63,24 @@ public class BookMenu {
 		System.out.print("할인율 : ");
 		double discount = sc.nextDouble();
 		sc.nextLine();
-		
+			
 		Book temp = new Book(title,author,price,d1,discount);
-		System.out.println(temp.toString());
 		
+		for(int i = 0 ; i < 10 ; i++) {
+			if(bArr[i] == null) {
+				bArr[i] = temp;
+				break;
+			}
+		}
+				
 		bc.fileSave(bArr);
 	}
 
 	public void fileRead() {
 		for(Book t : bc.fileRead()) {
-			System.out.println(t.toString());
+			if(t!=null) {
+				System.out.println(t.toString());
+			}
 		}
 		System.out.println();
 	}

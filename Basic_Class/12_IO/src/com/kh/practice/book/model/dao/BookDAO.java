@@ -27,8 +27,8 @@ public class BookDAO {
 
 	public Book[] fileRead() {
 		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("book.txt"))) {
-			for (Book temp : bArr) {
-				temp = (Book)ois.readObject();
+			for(int i = 0 ; i < bArr.length ; i++) {
+				bArr[i] = (Book)ois.readObject();
 			}
 		} catch (EOFException e) {
 		} catch (IOException e) {
@@ -36,7 +36,7 @@ public class BookDAO {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-
+		
 		return bArr;
 	}
 
