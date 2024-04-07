@@ -14,7 +14,7 @@ public class ScoreController {
 	}
 
 	public DataInputStream readScore() throws FileNotFoundException {
-		return null;
+		return sd.readScore();
 	}
 
 }
