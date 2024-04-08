@@ -1,13 +1,16 @@
 package com.kh.practice.list.music.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
+import com.kh.practice.list.music.model.compare.AscTitle;
 import com.kh.practice.list.music.model.vo.Music;
 
 public class MusicController {
 
-	private List<Music> list = new ArrayList<>();
+	private List<Music> list = new ArrayList<Music>();
 
 	public int addList(Music music) {
 		boolean result = list.add(music);
@@ -57,11 +60,13 @@ public class MusicController {
 	}
 
 	public int ascTitle() {
-		return 0;
+		Collections.sort(list);
+		return 1;
 	}
 
 	public int descSinger() {
-		return 0;
+		Collections.sort(list , new AscTitle());
+		return 1;
 	}
 
 }

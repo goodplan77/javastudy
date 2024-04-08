@@ -122,15 +122,18 @@ public class MusicView {
 
 	public void setMusic() {
 		System.out.println("****** 특정 곡 정보 수정 ******");
-		System.out.print("수정할 곡 명 : ");
+		System.out.print("검색할 곡 명 : ");
 		String searchTitle = sc.nextLine();
-		Music temp = mc.searchMusic(searchTitle);
+		
+		System.out.print("수정할 곡 명 : ");
+		String setTitle = sc.nextLine();
+		
+		System.out.print("수정할 가수 명 : ");
+		String setSinger = sc.nextLine();
+		
+		Music temp = mc.setMusic(searchTitle , new Music(setTitle,setSinger));
+		
 		if (temp != null) {
-			System.out.print("수정할 곡 명 : ");
-			String setTitle = sc.nextLine();
-			
-			System.out.println("수정할 가수 명 : ");
-			String setSinger = sc.nextLine();
 			System.out.println(temp.getSinger() + " - " + temp.getTitle() + "가 값이 변경되었습니다.");
 		} else {
 			System.out.println("검색한 곡이 없습니다");
@@ -138,9 +141,19 @@ public class MusicView {
 	}
 
 	public void ascTitle() {
+		if(mc.ascTitle() > 0) {
+			System.out.println("정렬 성공");
+		} else {
+			System.out.println("정렬 실패");
+		}
 	}
 
 	public void descSinger() {
+		if(mc.descSinger() > 0) {
+			System.out.println("정렬 성공");
+		} else {
+			System.out.println("정렬 실패");
+		}
 	}
 
 }

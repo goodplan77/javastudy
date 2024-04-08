@@ -1,6 +1,6 @@
 package com.kh.practice.list.music.model.vo;
 
-public class Music {
+public class Music implements Comparable<Music> {
 
 	private String title;
 	private String singer;
@@ -13,8 +13,6 @@ public class Music {
 		this.title = title;
 		this.singer = singer;
 	}
-	
-	
 
 	public String getTitle() {
 		return title;
@@ -34,7 +32,7 @@ public class Music {
 
 	@Override
 	public String toString() {
-		return "Music [title=" + title + ", singer=" + singer + "]";
+		return singer + " - " + title;
 	}
 
 	public int hashCode() {
@@ -45,8 +43,9 @@ public class Music {
 		return false;
 	}
 
-	public int compareTo(Object o) {
-		return 0;
+	@Override
+	public int compareTo(Music o) {
+		return this.singer.compareTo(((Music) o).singer);
 	}
 
 }
