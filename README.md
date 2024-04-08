@@ -131,6 +131,17 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 </details>
 
 
+<details>
+<summary>13 Collections (13_Collections) </summary>
+
+- 기본 개념 
+    1. ArrayList (chap01_list.part01_arrayList)
+- 실습 문제
+   1. Library ()
+   2. Music (practice.list.music)
+</details>
+
+
 
 ## 실습 과제 (Practice)
 
