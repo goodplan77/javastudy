@@ -11,7 +11,7 @@ public class MusicController {
 
 	public int addList(Music music) {
 		boolean result = list.add(music);
-		if(result) {
+		if (result) {
 			return 1;
 		} else {
 			return -1;
@@ -21,7 +21,7 @@ public class MusicController {
 	public int addAtZero(Music music) {
 		list.add(0, music);
 		return 1;
-		
+
 	}
 
 	public List printAll() {
@@ -29,18 +29,18 @@ public class MusicController {
 	}
 
 	public Music searchMusic(String title) {
-		for(int i = 0 ; i < list.size() ; i++) {
-			if(list.get(i).equals(title)) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getTitle().equals(title)) {
 				return list.get(i);
 			}
 		}
-		
+
 		return null;
 	}
 
 	public Music removeMusic(String title) {
-		for(int i = 0 ; i < list.size() ; i++) {
-			if(list.get(i).equals(title)) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getTitle().equals(title)) {
 				return list.remove(i);
 			}
 		}
@@ -48,8 +48,8 @@ public class MusicController {
 	}
 
 	public Music setMusic(String title, Music music) {
-		for(int i = 0 ; i < list.size() ; i++) {
-			if(list.get(i).equals(title)) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getTitle().equals(title)) {
 				return list.set(i, music);
 			}
 		}

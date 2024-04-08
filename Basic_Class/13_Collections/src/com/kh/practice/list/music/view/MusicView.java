@@ -68,7 +68,7 @@ public class MusicView {
 		System.out.print("곡 명 : ");
 		String inputTitle = sc.nextLine();
 
-		System.out.println("가수 명 : ");
+		System.out.print("가수 명 : ");
 		String inputSinger = sc.nextLine();
 
 		if (mc.addList(new Music(inputTitle, inputSinger)) > 0) {
@@ -84,7 +84,7 @@ public class MusicView {
 		System.out.print("곡 명 : ");
 		String inputTitle = sc.nextLine();
 
-		System.out.println("가수 명 : ");
+		System.out.print("가수 명 : ");
 		String inputSinger = sc.nextLine();
 
 		if (mc.addAtZero(new Music(inputTitle, inputSinger)) > 0) {
@@ -104,11 +104,7 @@ public class MusicView {
 		System.out.print("검색할 곡 명 : ");
 		String searchTitle = sc.nextLine();
 		Music temp = mc.searchMusic(searchTitle);
-		if (temp != null) {
-			System.out.println(temp.getTitle() + " - " + temp.getSinger());
-		} else {
-			System.out.println("검색한 곡이 없습니다");
-		}
+		System.out.println(temp);
 	}
 
 	public void removeMusic() {
@@ -117,7 +113,7 @@ public class MusicView {
 		String searchTitle = sc.nextLine();
 		Music temp = mc.removeMusic(searchTitle);
 		if (temp != null) {
-			System.out.println(temp.getTitle() + " - " + temp.getSinger() + "을 삭제 했습니다.");
+			System.out.println(temp.getSinger() + " - " + temp.getTitle() + "을 삭제 했습니다.");
 		} else {
 			System.out.println("검색한 곡이 없습니다");
 		}
@@ -126,8 +122,19 @@ public class MusicView {
 
 	public void setMusic() {
 		System.out.println("****** 특정 곡 정보 수정 ******");
-		System.out.print("삭제할 곡 명 : ");
+		System.out.print("수정할 곡 명 : ");
 		String searchTitle = sc.nextLine();
+		Music temp = mc.searchMusic(searchTitle);
+		if (temp != null) {
+			System.out.print("수정할 곡 명 : ");
+			String setTitle = sc.nextLine();
+			
+			System.out.println("수정할 가수 명 : ");
+			String setSinger = sc.nextLine();
+			System.out.println(temp.getSinger() + " - " + temp.getTitle() + "가 값이 변경되었습니다.");
+		} else {
+			System.out.println("검색한 곡이 없습니다");
+		}
 	}
 
 	public void ascTitle() {
