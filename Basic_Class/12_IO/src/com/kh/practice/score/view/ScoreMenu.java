@@ -1,9 +1,11 @@
 package com.kh.practice.score.view;
 
+import java.io.DataInputStream;
 import java.io.EOFException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
+
 import com.kh.practice.score.controller.ScoreController;
 
 public class ScoreMenu {
@@ -44,13 +46,13 @@ public class ScoreMenu {
 			System.out.print("이름 : ");
 			String name = sc.nextLine();
 
-			System.out.print("국어 점수 :");
+			System.out.print("국어 점수 : ");
 			int korScore = sc.nextInt();
 
-			System.out.print("영어 점수 :");
+			System.out.print("영어 점수 : ");
 			int engScore = sc.nextInt();
 
-			System.out.print("수학 점수 :");
+			System.out.print("수학 점수 : ");
 			int mathScore = sc.nextInt();
 
 			int sum = korScore + engScore + mathScore;
@@ -60,7 +62,7 @@ public class ScoreMenu {
 
 			sc.nextLine();
 
-			System.out.print("그만 입력하시려면 N 또는 n 입력, 계속 하시려면 아무 키나 입력하세요 :");
+			System.out.print("그만 입력하시려면 N 또는 n 입력, 계속 하시려면 아무 키나 입력하세요 : ");
 			char select = sc.nextLine().toLowerCase().charAt(0);
 
 			if (select == 'n') {
@@ -75,34 +77,34 @@ public class ScoreMenu {
 		int count = 0;
 		int sumAll = 0;
 		double avgAll = 0;
-		
+
 		System.out.println("이름\t국어\t영어\t수학\t총점\t평균");
-		
-		try {
-			int value = 0;
-			while((value = scr.readScore().read()) != -1) {
-				System.out.println((char)value);
-				if(value == '\n') {
-					count++;
-				}
+
+		try (DataInputStream dis = scr.readScore()) {
+			while (true) {
+				String name = dis.readUTF();
+				int kor = dis.readInt();
+				int eng = dis.readInt();
+				int math = dis.readInt();
+				int sum = dis.readInt();
+				double avg = dis.readDouble();
+				dis.readChar();
+				
+				System.out.println(name + "\t" + kor + "\t" + eng + "\t" + math + "\t" + sum + "\t" + avg);
+				
+				count++; // 읽어 들이기 완료. 회수 증가
+				sumAll += sum; // 학생별 총점 합산
+				avgAll += avg; // 학생점 평균 합산
 			}
-			
-		} catch(EOFException e) {
-			System.out.println("읽은 회수 전체 합계 전체 평균");
-			System.out.println(count + " " + sumAll + " " + avgAll);
-		} catch(IOException e) {
+
+		} catch (EOFException e) {
+			avgAll /= count;
+			System.out.println("읽은 회수 \t 전체 합계 전체 평균");
+			System.out.println(count + " \t " + sumAll + " \t " + avgAll);
+		} catch (IOException e) {
 			e.printStackTrace();
-		} finally {
-			try {
-				scr.readScore().close();
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		}
-		
-		
+
 	}
 
 }

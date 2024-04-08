@@ -1,7 +1,6 @@
 package com.kh.practice.book.view;
 
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 import com.kh.practice.book.controller.BookController;
@@ -12,7 +11,7 @@ public class BookMenu {
 	private Scanner sc = new Scanner(System.in);
 	private BookController bc = new BookController();
 
-	private Book[] bArr;
+	private Book[] bArr; // = null;
 
 	public BookMenu() {
 		bc.makeFile();
@@ -25,8 +24,8 @@ public class BookMenu {
 			System.out.println("2. 저장 도서 출력 ");
 			System.out.println("9. 프로그램 끝내기");
 			System.out.print("메뉴 번호 : ");
-			int select = sc.nextInt();
-			sc.nextLine();
+			int select = Integer.parseInt(sc.nextLine());
+
 			switch (select) {
 			case 1:
 				fileSave();
@@ -48,37 +47,36 @@ public class BookMenu {
 	public void fileSave() {
 		System.out.print("도서 명 : ");
 		String title = sc.nextLine();
-		
+
 		System.out.print("저자 명 : ");
 		String author = sc.nextLine();
-		
+
 		System.out.print("도서 가격 : ");
-		int price = sc.nextInt();
-		sc.nextLine();
-		
+		int price = Integer.parseInt(sc.nextLine());
+
 		System.out.print("출판 날짜(yyyy-mm-dd) : ");
 		String[] date = sc.nextLine().split("-", 3);
-		Calendar d1 = new GregorianCalendar(Integer.valueOf(date[0]),Integer.valueOf(date[1]),Integer.valueOf(date[2]));
-		
+		Calendar d1 = Calendar.getInstance();
+		d1.set(Integer.parseInt(date[0]), Integer.parseInt(date[1])-1, Integer.parseInt(date[2]));
+
 		System.out.print("할인율 : ");
-		double discount = sc.nextDouble();
-		sc.nextLine();
-			
-		Book temp = new Book(title,author,price,d1,discount);
-		
-		for(int i = 0 ; i < 10 ; i++) {
-			if(bArr[i] == null) {
+		double discount = Double.parseDouble(sc.nextLine());
+
+		Book temp = new Book(title, author, price, d1, discount);
+
+		for (int i = 0; i < bArr.length; i++) {
+			if (bArr[i] == null) {
 				bArr[i] = temp;
 				break;
 			}
 		}
-				
+
 		bc.fileSave(bArr);
 	}
 
 	public void fileRead() {
-		for(Book t : bc.fileRead()) {
-			if(t!=null) {
+		for (Book t : bc.fileRead()) {
+			if (t != null) {
 				System.out.println(t.toString());
 			}
 		}

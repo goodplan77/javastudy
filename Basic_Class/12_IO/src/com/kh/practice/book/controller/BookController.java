@@ -2,6 +2,7 @@ package com.kh.practice.book.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.kh.practice.book.model.dao.BookDAO;
 import com.kh.practice.book.model.vo.Book;
@@ -12,7 +13,7 @@ public class BookController {
 	public void makeFile() {
 		String name = "book.txt";
 		File f = new File(name);
-		if(!f.exists()) {
+		if (!f.exists()) {
 			try {
 				f.createNewFile();
 			} catch (IOException e) {
