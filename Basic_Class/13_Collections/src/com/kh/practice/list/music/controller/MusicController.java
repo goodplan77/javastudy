@@ -10,21 +10,24 @@ import com.kh.practice.list.music.model.vo.Music;
 
 public class MusicController {
 
-	private List<Music> list = new ArrayList<Music>();
+	private List list = new ArrayList();
 
 	public int addList(Music music) {
-		boolean result = list.add(music);
-		if (result) {
+		try {
+			list.add(music);
 			return 1;
-		} else {
-			return -1;
+		} catch (Exception e) { // 데이터 추가시 오류가 발생?
+			return 0;
 		}
 	}
 
 	public int addAtZero(Music music) {
-		list.add(0, music);
-		return 1;
-
+		try {
+			list.add(0, music); // 비효율적? LinkedList? 사용 권장?
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	public List printAll() {
@@ -33,18 +36,18 @@ public class MusicController {
 
 	public Music searchMusic(String title) {
 		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getTitle().equals(title)) {
-				return list.get(i);
+			if (((Music)list.get(i)).getTitle().equals(title)) {
+				return (Music)list.get(i);
 			}
 		}
-
+		
 		return null;
 	}
 
 	public Music removeMusic(String title) {
 		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getTitle().equals(title)) {
-				return list.remove(i);
+			if (((Music)list.get(i)).getTitle().equals(title)) {
+				return (Music)list.remove(i);
 			}
 		}
 		return null;
@@ -52,20 +55,20 @@ public class MusicController {
 
 	public Music setMusic(String title, Music music) {
 		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getTitle().equals(title)) {
-				return list.set(i, music);
+			if (((Music)list.get(i)).getTitle().equals(title)) {
+				return (Music)list.set(i, music);
 			}
 		}
 		return null;
 	}
 
 	public int ascTitle() {
-		Collections.sort(list);
+		Collections.sort(list , new AscTitle());
 		return 1;
 	}
 
 	public int descSinger() {
-		Collections.sort(list , new AscTitle());
+		Collections.sort(list);
 		return 1;
 	}
 

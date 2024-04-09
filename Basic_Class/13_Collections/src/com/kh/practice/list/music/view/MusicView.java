@@ -104,7 +104,11 @@ public class MusicView {
 		System.out.print("검색할 곡 명 : ");
 		String searchTitle = sc.nextLine();
 		Music temp = mc.searchMusic(searchTitle);
-		System.out.println(temp);
+		if (temp != null) {
+			System.out.println(temp);
+		} else {
+			System.out.println("검색한 곡이 없습니다");
+		}
 	}
 
 	public void removeMusic() {
