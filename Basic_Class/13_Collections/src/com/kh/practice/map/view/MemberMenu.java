@@ -1,7 +1,12 @@
 package com.kh.practice.map.view;
 
+import java.util.Map.Entry;
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
 
+import com.kh.chap02_map.part01hashMap.model.vo.Snack;
 import com.kh.practice.map.controller.MemberController;
 import com.kh.practice.map.model.vo.Member;
 
@@ -75,33 +80,38 @@ public class MemberMenu {
 	}
 
 	public void joinMembership() {
-		System.out.println("아이디 : ");
-		String inputId = sc.nextLine();
 
-		System.out.println("비밀번호 : ");
-		String inputPassword = sc.nextLine();
+		while (true) {
+			System.out.print("아이디 : ");
+			String inputId = sc.nextLine();
 
-		System.out.println("이름 : ");
-		String inputName = sc.nextLine();
+			System.out.print("비밀번호 : ");
+			String inputPassword = sc.nextLine();
 
-		Member temp = new Member(inputPassword, inputName);
+			System.out.print("이름 : ");
+			String inputName = sc.nextLine();
 
-		boolean result = mc.joinMembership(inputId, temp);
+			Member temp = new Member(inputPassword, inputName);
 
-		if (result) {
-			System.out.println("성공적으로 회원가입 완료하였습니다");
-		} else {
-			System.out.println("중복된 아이디입니다. 다시 입력해주세요");
+			boolean result = mc.joinMembership(inputId, temp);
+
+			if (result) {
+				System.out.println("성공적으로 회원가입 완료하였습니다");
+				break;
+			} else {
+				System.out.println("중복된 아이디입니다. 다시 입력해주세요");
+			}
 		}
+
 	}
 
 	public void logIn() {
 
 		while (true) {
-			System.out.println("아이디 : ");
+			System.out.print("아이디 : ");
 			String inputId = sc.nextLine();
 
-			System.out.println("비밀번호 : ");
+			System.out.print("비밀번호 : ");
 			String inputPassword = sc.nextLine();
 
 			String result = mc.logIn(inputId, inputPassword);
@@ -117,13 +127,13 @@ public class MemberMenu {
 	}
 
 	public void changePassword() {
-		System.out.println("아이디 : ");
+		System.out.print("아이디 : ");
 		String inputId = sc.nextLine();
 
-		System.out.println("현재 비밀번호 : ");
+		System.out.print("현재 비밀번호 : ");
 		String inputOldPassword = sc.nextLine();
 
-		System.out.println("새로운 비밀번호 : ");
+		System.out.print("새로운 비밀번호 : ");
 		String inputNewPassword = sc.nextLine();
 
 		if (mc.changePassword(inputId, inputOldPassword, inputNewPassword)) {
@@ -136,17 +146,17 @@ public class MemberMenu {
 	public void changeName() {
 
 		while (true) {
-			System.out.println("아이디 : ");
+			System.out.print("아이디 : ");
 			String inputId = sc.nextLine();
 
-			System.out.println("비밀번호 : ");
+			System.out.print("비밀번호 : ");
 			String inputPassword = sc.nextLine();
 
 			String result = mc.logIn(inputId, inputPassword);
 
 			if (result != null) {
 				System.out.println("현재 설정된 이름 : " + result);
-				System.out.println("변경할 이름 : ");
+				System.out.print("변경할 이름 : ");
 				String inputNewName = sc.nextLine();
 				mc.changeName(inputId, inputNewName);
 				System.out.println("이름 변경에 성공했습니다.");
@@ -159,6 +169,16 @@ public class MemberMenu {
 	}
 
 	public void sameName() {
+		System.out.print("검색할 이름 : ");
+		String searchName = sc.nextLine();
+
+		TreeMap<String, Member> temp = mc.sameName(searchName);
+		Set<Entry<String, Member>> entrySet = temp.entrySet();
+		Iterator<Entry<String, Member>> itEntry = entrySet.iterator();
+		while (itEntry.hasNext()) {
+			Entry<String, Member> entry = itEntry.next();
+			System.out.println(entry.getValue().getName() + "-" + entry.getKey());
+		}
 	}
 
 }
