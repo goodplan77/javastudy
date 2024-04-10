@@ -6,7 +6,6 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
 
-import com.kh.chap02_map.part01hashMap.model.vo.Snack;
 import com.kh.practice.map.controller.MemberController;
 import com.kh.practice.map.model.vo.Member;
 
