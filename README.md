@@ -135,11 +135,18 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 <summary>13 컬렉션 (13_Collections) </summary>
 
 - 기본 개념 
-  1. ArrayList (chap01_list.part01_arrayList)
-  2. HashMap (chap02_map.part01hashMap)
+  1. List (chap01_list)
+   - ArrayList (part01_arrayList)
+   - Array -> ArrayList (part02_clone.run)
+  2. Map (chap02_map)
+   - HashMap (part01_hashMap)
+   - Array -> HashMap (part02_cloneMap.run)
+   - Properties (part03_properties.run)
+  3. Set (chap03_set)
 - 실습 문제
   1. list_Library (practice.list.library)
   2. list_Music (practice.list.music)
+  3. map_member (practice.map)
 </details>
 
 
