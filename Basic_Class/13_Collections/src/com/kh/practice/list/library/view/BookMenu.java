@@ -106,10 +106,11 @@ public class BookMenu {
 		ArrayList<Book> temp = bc.searchBook(searchKeyword);
 		if (temp.isEmpty()) {
 			System.out.println("존재하는 도서가 없습니다");
-		} else {
-			for (Book m : temp) {
-				System.out.println(m);
-			}
+			return;
+		}
+
+		for (Book m : temp) {
+			System.out.println(m);
 		}
 
 	}
@@ -120,17 +121,18 @@ public class BookMenu {
 
 		System.out.print("삭제할 저자 명 : ");
 		String inputAuthor = sc.nextLine();
-		
+
 		Book remove = bc.deleteBook(inputTitle, inputAuthor);
-		if(remove != null) {
-			System.out.println("성공적으로 삭제되었습니다");
-		} else {
+		if (remove == null) {
 			System.out.println("삭제할 도서를 찾지 못했습니다");
+			return;
 		}
+
+		System.out.println("성공적으로 삭제되었습니다");
 	}
 
 	public void ascBook() {
-		if(bc.ascBook() > 0) {
+		if (bc.ascBook() > 0) {
 			System.out.println("정렬에 성공하였습니다");
 		} else {
 			System.out.println("정렬에 실패하였습니다.");

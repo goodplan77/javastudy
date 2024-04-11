@@ -8,7 +8,7 @@ import com.kh.practice.list.library.model.vo.Book;
 
 public class BookController {
 
-	private List<Book> bookList = new ArrayList<Book>();
+	private List bookList = new ArrayList();
 
 	public BookController() {
 		bookList.add(new Book("자바의 정석", "남궁 성", "기타", 20000));
@@ -21,35 +21,47 @@ public class BookController {
 		bookList.add(bk);
 	}
 
-	public ArrayList selectList() {
+	public ArrayList selectList() { // public List selectList() 로 하는 경우가 많음?
 		return (ArrayList) bookList;
 	}
 
 	public ArrayList searchBook(String keyword) {
-		ArrayList<Book> searchList = new ArrayList<Book>();
-		for(Book m : bookList) {
-			if(m.getTitle().contains(keyword)) {
-				searchList.add(m);
+		ArrayList searchList = new ArrayList();
+		for (Object o : bookList) {
+			Book b = (Book) o;
+			if (b.getTitle().contains(keyword)) {
+				searchList.add(b);
 			}
 		}
-		
+
 		return searchList;
 	}
 
 	public Book deleteBook(String title, String author) {
 		Book removeBook = null;
-		for(int i = 0 ; i < bookList.size() ; i++) {
-			if(bookList.get(i).getTitle().equals(title) && bookList.get(i).getAuthor().equals(author)) {
-				removeBook = bookList.get(i);
+		for (int i = 0; i < bookList.size(); i++) {
+			Book searchBook = (Book) bookList.get(i);
+			String sTitle = searchBook.getTitle();
+			String sAuthor = searchBook.getAuthor();
+			if (sTitle.equals(title) && sAuthor.equals(author)) {
+				removeBook = searchBook;
 				bookList.remove(i);
+				// removeBook = (Book) bookList.remove(i); // 리스트에 지우면서 지워지는 객체를 동시에 반환
+				// remove : 인덱스를 넣어준 경우 바로 접근. 객체를 넣어준 경우 반복문을 돌려서 equals() 메소드로 확인해서 지움
+				break;
 			}
 		}
-		
+
 		return removeBook;
 	}
 
 	public int ascBook() {
-		Collections.sort(bookList);
+		try {
+			Collections.sort(bookList);
+		} catch(Exception e) {
+			return 0;
+		}
+		
 		return 1;
 	}
 }
