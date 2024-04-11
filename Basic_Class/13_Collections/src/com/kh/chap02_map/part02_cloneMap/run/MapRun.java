@@ -1,6 +1,6 @@
 package com.kh.chap02_map.part02_cloneMap.run;
 
-import com.kh.chap02_map.part01hashMap.model.vo.Snack;
+import com.kh.chap02_map.part01_hashMap.model.vo.Snack;
 
 public class MapRun {
 

@@ -1,4 +1,4 @@
-package com.kh.chap02_map.part01hashMap.model.vo;
+package com.kh.chap02_map.part01_hashMap.model.vo;
 
 import java.util.Objects;
 
