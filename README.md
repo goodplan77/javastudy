@@ -132,7 +132,7 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 
 
 <details>
-<summary>13 컬렉션 (13_Collections) </summary>
+<summary>13 컬렉션 , 제네릭 (13_Collections) </summary>
 
 - 기본 개념 
   1. List (chap01_list)
@@ -143,6 +143,7 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
    - Array -> HashMap (part02_cloneMap.run)
    - Properties (part03_properties.run)
   3. Set (chap03_set)
+  4. Generic (chap04_generic)
 - 실습 문제
   1. list_Library (practice.list.library)
   2. list_Music (practice.list.music)
