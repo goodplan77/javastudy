@@ -11,7 +11,7 @@ public class Generic2<T /*extends Parent*/> {
 		// generic.doPrinting(); // Parent 에 존재하는 doPrinting() 호출 가능
 	}
 
-	public T gerGeneric() {
+	public T getGeneric() {
 		return generic;
 	}
 
@@ -48,7 +48,7 @@ public class Generic2<T /*extends Parent*/> {
 		// unknown2.setGeneric(new Parent()); 오류 발생
 		// unknown2.setGeneric(new Child1()); 오류 발생
 		// 즉 , ? 사용시 제네릭에 값을 대입하기 위한 용도로 extends를 통해 제한 하는 것은 좋은 방법이 아님 (안됨)
-		Parent p = unknown2.gerGeneric(); // 값을 추출하는데 있어서는 문제 없음.
+		Parent p = unknown2.getGeneric(); // 값을 추출하는데 있어서는 문제 없음.
 		
 		// 2. super를 활용한 와일드 카드 범위 제한 (최소 클래스 지정)
 		// ?의 범위는 Parent , Parent의 조상들로 제한
@@ -58,7 +58,7 @@ public class Generic2<T /*extends Parent*/> {
 		unknown3.setGeneric(new Child1());
 		// ?가 Parent든 , Parent의 조상이든, Object든 다형성이 발생 즉, 다형성의 특징 (업캐스팅)을 이용해서
 		// 자료형이 가지는 최소 클래스를 부모 클래스로 설정 한것.
-		// Parent p2 = unknown3.gerGeneric(); // Parent 보다 상위클래스도 ? 의 범위에 들어가므로 문제 발생
+		// Parent p2 = unknown3.getGeneric(); // Parent 보다 상위클래스도 ? 의 범위에 들어가므로 문제 발생
 		
 		
 	}
