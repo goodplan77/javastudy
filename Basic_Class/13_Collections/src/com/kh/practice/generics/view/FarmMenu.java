@@ -21,7 +21,7 @@ public class FarmMenu {
 
 		while (true) {
 			System.out.println("******* 메인 메뉴 *******");
-			System.out.println("1. 직원메뉴");
+			System.out.println("1. 직원 메뉴");
 			System.out.println("2. 손님 메뉴");
 			System.out.println("9. 종료 ");
 
@@ -81,10 +81,11 @@ public class FarmMenu {
 	}
 
 	public void customerMenu() {
-		System.out.println("현재 KH마트 농산물 수량");
-		printFarm();
 
 		while (true) {
+			System.out.println("현재 KH마트 농산물 수량");
+			printFarm();
+
 			System.out.println("******* 고객 메뉴 *******");
 			System.out.println("1. 농산물 사기");
 			System.out.println("2. 농산물 빼기");
@@ -117,7 +118,8 @@ public class FarmMenu {
 
 		Farm temp = null;
 		while (true) {
-			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
+			System.out.println("1. 과일 / 2. 채소 / 3. 견과 ");
+			System.out.print("추가할 종류 번호 : ");
 			int select = Integer.parseInt(sc.nextLine());
 
 			switch (select) {
@@ -165,7 +167,8 @@ public class FarmMenu {
 
 		Farm temp = null;
 		while (true) {
-			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
+			System.out.println("1. 과일 / 2. 채소 / 3. 견과 ");
+			System.out.print("삭제할 종류 번호 : ");
 			int select = Integer.parseInt(sc.nextLine());
 
 			switch (select) {
@@ -200,7 +203,7 @@ public class FarmMenu {
 		}
 
 		if (fc.removeKind(temp)) {
-			System.out.println("새 농산물이 추가되었습니다");
+			System.out.println("농산물 삭제에 성공하였습니다.");
 		} else {
 			System.out.println("새 농산물 추가에 실패하였습니다. 다시 입력해주세요");
 		}
@@ -210,7 +213,8 @@ public class FarmMenu {
 	public void changeAmount() {
 		Farm temp = null;
 		while (true) {
-			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
+			System.out.println("1. 과일 / 2. 채소 / 3. 견과 ");
+			System.out.print("수정할 종류 번호 : ");
 			int select = Integer.parseInt(sc.nextLine());
 
 			switch (select) {
@@ -244,13 +248,13 @@ public class FarmMenu {
 			((Nut) temp).setName(inputName);
 		}
 
-		System.out.print("수량 : ");
+		System.out.print("수정할 수량 : ");
 		int inputCount = Integer.parseInt(sc.nextLine());
 
 		if (fc.changeAmount(temp, inputCount)) {
-			System.out.println("새 농산물이 추가되었습니다");
+			System.out.println("농산물 수량이 수정되었습니다");
 		} else {
-			System.out.println("새 농산물 추가에 실패하였습니다. 다시 입력해주세요");
+			System.out.println("농산물 수량 수정에 실패하였습니다. 다시 입력해주세요");
 		}
 	}
 
@@ -276,7 +280,8 @@ public class FarmMenu {
 
 		Farm temp = null;
 		while (true) {
-			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
+			System.out.println("1. 과일 / 2. 채소 / 3. 견과 ");
+			System.out.print("추가할 종류 번호 : ");
 			int select = Integer.parseInt(sc.nextLine());
 
 			switch (select) {
@@ -299,7 +304,7 @@ public class FarmMenu {
 			}
 		}
 
-		System.out.print("이름 : ");
+		System.out.print("구매할 것 : ");
 		String inputName = sc.nextLine();
 
 		if (temp instanceof Fruit) {
@@ -320,7 +325,8 @@ public class FarmMenu {
 	public void removeFarm() {
 		Farm temp = null;
 		while (true) {
-			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
+			System.out.println("1. 과일 / 2. 채소 / 3. 견과 ");
+			System.out.print("추가할 종류 번호 : ");
 			int select = Integer.parseInt(sc.nextLine());
 
 			switch (select) {
@@ -343,7 +349,7 @@ public class FarmMenu {
 			}
 		}
 
-		System.out.print("이름 : ");
+		System.out.print("구매 취소할 것 : ");
 		String inputName = sc.nextLine();
 
 		if (temp instanceof Fruit) {

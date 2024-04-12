@@ -31,10 +31,10 @@ public class FarmController {
 
 	public boolean changeAmount(Farm f, int amount) {
 		if (hMap.containsKey(f)) {
-			return false;
-		} else {
 			hMap.replace(f, amount);
 			return true;
+		} else {
+			return false;
 		}
 	}
 
