@@ -171,12 +171,12 @@ public class MemberMenu {
 		System.out.print("검색할 이름 : ");
 		String searchName = sc.nextLine();
 
-		TreeMap<String, Member> temp = mc.sameName(searchName);
-		Set<Entry<String, Member>> entrySet = temp.entrySet();
-		Iterator<Entry<String, Member>> itEntry = entrySet.iterator();
+		TreeMap<String, String> temp = mc.sameName(searchName);
+		Set<Entry<String, String>> entrySet = temp.entrySet();
+		Iterator<Entry<String, String>> itEntry = entrySet.iterator();
 		while (itEntry.hasNext()) {
-			Entry<String, Member> entry = itEntry.next();
-			System.out.println(entry.getValue().getName() + "-" + entry.getKey());
+			Entry<String, String> entry = itEntry.next();
+			System.out.println(entry.getValue() + "-" + entry.getKey());
 		}
 	}
 

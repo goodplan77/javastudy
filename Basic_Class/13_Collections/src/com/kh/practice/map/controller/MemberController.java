@@ -12,7 +12,7 @@ public class MemberController {
 	private HashMap<String, Member> map = new HashMap<>();
 
 	public boolean joinMembership(String id, Member m) {
-		if (map.get(id) != null) {
+		if (map.containsKey(id)) {
 			return false;
 		} else {
 			map.put(id, m);
@@ -31,7 +31,7 @@ public class MemberController {
 	public boolean changePassword(String id, String oldPw, String newPw) {
 			Member temp = map.get(id);
 		if (temp != null && temp.getPassword().equals(oldPw)) {
-			temp.setPassword(newPw);;
+			temp.setPassword(newPw);
 			map.replace(id, temp);
 			return true;
 		}
@@ -48,16 +48,16 @@ public class MemberController {
 
 	}
 
-	public TreeMap sameName(String name) {
+	public TreeMap<String,String> sameName(String name) {
 		Set<String> keySet = map.keySet();
 		Iterator<String> itKey = keySet.iterator();
 		
-		TreeMap<String , Member> temp = new TreeMap<>();
+		TreeMap<String , String> temp = new TreeMap<>();
 		
 		while(itKey.hasNext()) {
 			String key = itKey.next();
 			if(map.get(key).getName().equals(name)) {
-				temp.put(key, map.get(key));
+				temp.put(key, map.get(key).getName());
 			}
 		}
 		
