@@ -158,6 +158,9 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
  2. 스케쥴링 (chap02_scheduling)
  3. 스레드 제어 (chap03_control)
  4. 스레드 동기화 (chap04_sync)
+    - 동기화 , 스레드 컨트롤 , 교착상태
+ 5. 스레드 풀 (chap05_threadPool)
+ 6. 실습 문제 (practice)
 
 </details>
 
