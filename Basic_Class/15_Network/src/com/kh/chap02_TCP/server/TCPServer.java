@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 
 /*
  * TCP(Transmission Control Protocol)
@@ -50,7 +51,7 @@ public class TCPServer {
 	public static void main(String[] args) {
 		// 1) 서버의 소켓 객체 생성
 		ServerSocket server = null;
-		int port = 30250; // 1024 ~ 65535 의 범위의 포트를 사용하는 걸 추천.
+		int port = 30025; // 1024 ~ 65535 의 범위의 포트를 사용하는 걸 추천.
 		
 		try {
 			server = new ServerSocket(port); // 매개 변수 미 지정시 랜덤으로 포트 번호 지정
@@ -58,6 +59,7 @@ public class TCPServer {
 			System.out.println("서버 소켓 객체 생성 완료");
 			
 			// 클라이언트의 요청을 처리 한 후 프로세스가 끊기지 않게 무한 반복
+			int count = 0;
 			while(true) {
 				
 				// 2) + 3) 클라이언트 접속 요청을 기다리고 요청이 오면 수락
@@ -65,23 +67,31 @@ public class TCPServer {
 				Socket client = server.accept(); // 클라이언트의 요청이 들어오기전 까지 대기. 요청이 들어오면 소켓 객체를 생성 후 반환
 			
 				// 4) 클라이언트 정보 저장
+				System.out.println((++count) + "번째 클라이언트가 접속됨.");
+				System.out.println("연결된 클라이언트의 IP : " + client.getInetAddress().getHostAddress());
+				System.out.println("연결된 클라이언트의 PORT : " + client.getPort());
 				
 				// 5) + 6) 연결된 클라이언트와 입출력 스트림 생성.
 				PrintWriter pw = new PrintWriter(client.getOutputStream() , true);
 				// 데이터를 print , println함수로 출력 가능.
 				BufferedReader reader = new BufferedReader(new InputStreamReader(client.getInputStream()));
 				
+				Scanner sc = new Scanner(System.in);
+				
 				// 7) IO
 				while(true) {
 					String message = reader.readLine(); // 사용자의 입력이 있을때 까지 block (I/O BLOCK)
-					
 					if(message == null || message.equals("exit")) {
 						System.out.println("클라이언트 접속 종료");
 						break;
 					}
 					
 					System.out.println(client.getInetAddress().getHostAddress() + "가 보낸 메시지 : " + message);
-					pw.println("클라이언트 측 으로부터 메세지 전달을 받았습니다."); // 한줄 단위로 값을 출력
+					
+					System.out.print("클라이언트에게 보낼 메세지 : ");
+					String responseMessage = sc.nextLine();
+					
+					pw.println(responseMessage); // 한줄 단위로 값을 출력
 					//pw.flush();
 				}
 				
