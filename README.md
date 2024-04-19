@@ -181,10 +181,16 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 <details>
 <summary>16 람다식 (16_Lamda) </summary>
 
- 1. 기본 개념 (chap01_innerClass)
+ 1. 내부 클래스 (chap01_innerClass)
     - 인스턴스 내부 클래스 (part01_instance)
     - 정적 내부 클래스 (part02_static)
     - 지역 내부 클래스 (part03_local)
+    - 익명 내부 클래스 (part04_anonymous)
+ 2. 람다식 (chap02_lamda)
+    - 기본 개념 (part01_basic)
+    - 개념 실습 (part02_practice)
+    - 함수형 인터페이스 (part03_FunctionalInterface)
+    - 메소드 참조 (part04_methodReference)
 
 </details>
 
