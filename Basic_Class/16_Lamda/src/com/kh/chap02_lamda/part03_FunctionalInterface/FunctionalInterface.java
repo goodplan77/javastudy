@@ -96,11 +96,13 @@ public class FunctionalInterface {
 		// 출력예시 : xxxx원은 달러로 xxxx.x$입니다.
 		
 		// 문제 1번 정답 제시
+		/*
 		Consumer<Date> date1= (date) -> {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 			System.out.println(sdf.format(date));
 		};
 		date1.accept(Calendar.getInstance().getTime());
+		*/
 		
 		/*
 		Supplier<String> date2 = () -> {
@@ -111,7 +113,16 @@ public class FunctionalInterface {
 			System.out.println(date.get());
 		*/
 		
+		// 문제 1번 정답
+		Runnable displayNow = () -> {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			System.out.println(sdf.format(new Date()));
+		};
+		
+		displayNow.run();
+		
 		// 문제 2번 정답 제시
+		/*
 		Supplier<TreeSet> lottery = () -> {
 			TreeSet<Integer> s1 = new TreeSet<>();
 			while(s1.size() <=6) {
@@ -120,10 +131,31 @@ public class FunctionalInterface {
 			return s1;
 			};
 		System.out.println(lottery.get());
+		*/
+		
+		// 문제 2번 정답
+		Supplier<TreeSet<Integer>> lottoPublisher = () -> {
+			TreeSet<Integer> lotto = new TreeSet<>();
+			while(lotto.size() < 6) {
+				lotto.add(new Random().nextInt(45) + 1);
+			}
+			return lotto;
+		};
+		
+		System.out.println(lottoPublisher.get());
 		
 		// 문제 3번 정답 제시
+		/*
 		Function<Integer , Double> function2 = won -> ((double) won / 1400);
 		System.out.println(2500 + " 원은 달러로 " + function2.apply(2500) +"$입니다.");
+		*/
+		
+		// 문제 3번 정답
+		Function<Integer , Double> wonDollar = (i) -> {
+			double rate = 1400;
+			return i / rate;
+		};
+		System.out.println("3000원은 달러로 " + wonDollar.apply(3000) + "$입니다.");
 		
 	}
 
