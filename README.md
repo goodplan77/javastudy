@@ -211,3 +211,15 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 12. 상속 (Homework4_Inheritance)
 13. 다형성1 (09_Polymorphism_Homework_강경호)
 14. 다형성2 (Homework5_Polymorphism)
+<details>
+<summary>15. 최종 테스트용 연습 문제 (Final_Practice) </summary>
+ 능력 평가를 위해 별도로 생성한 연습용 프로젝트 입니다.
+ 
+ 1. 파일 I/O (practice01_IO)
+ 2. 객체 I/O (practice02_ObjectIO)
+ 3. 컬렉션 (practice03_Collections)
+ 4. 스레드 (practice04_Thread)
+ 5. 네트워크 (practice05_Network)
+
+</details>
+
