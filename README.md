@@ -112,7 +112,6 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
 3. 커스텀 예외 (C_CustomException)
 4. 실습 문제 1_문자공백 (practice.charCheck)
 5. 실습 문제 2_정수범위 (practice.numRange)
-
 </details>
 
 
@@ -161,7 +160,6 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
     - 동기화 , 스레드 컨트롤 , 교착상태
  5. 스레드 풀 (chap05_threadPool)
  6. 실습 문제 (practice)
-
 </details>
 
 
@@ -174,7 +172,6 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
     - 공공 API 사용 (part03_api)
  2. TCP (chap02_TCP)
  3. UDP (chap03_UDP)
-
 </details>
 
 
@@ -191,7 +188,9 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
     - 개념 실습 (part02_practice)
     - 함수형 인터페이스 (part03_FunctionalInterface)
     - 메소드 참조 (part04_methodReference)
-
+ 3. 스트림 (chap03_stream)
+    - 기본 개념 (part01_basic)
+    - 연산 메소드 (part02_methods)
 </details>
 
 
@@ -220,6 +219,5 @@ JAVA 프로그래밍 언어 활용 수업 및 실습 과제 저장용 repositori
  3. 컬렉션 (practice03_Collections)
  4. 스레드 (practice04_Thread)
  5. 네트워크 (practice05_Network)
-
 </details>
 
