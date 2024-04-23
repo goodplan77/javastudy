@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import practice02_ObjectIO.model.vo.Food;
 import practice02_ObjectIO.model.vo.Student;
 
 /*
@@ -26,6 +27,8 @@ public class Run {
 		Run run = new Run();
 		run.ObjectWrite();
 		run.ObjectRead();
+		run.fileSave("test3.txt");
+		run.fileRead("test3.txt");
 	}
 	
 	// 객체 읽어 들이기
@@ -54,6 +57,38 @@ public class Run {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void fileSave(String fileName) {
+		File f = new File(fileName);
+		try (FileOutputStream fos = new FileOutputStream(f)) {
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(new Food("사과",20));
+			oos.close();
+			fos.close();
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void fileRead(String fileName) {
+		File f = new File(fileName);
+		try(FileInputStream fis = new FileInputStream(f)) {
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			Food temp = (Food)(ois.readObject());
+			System.out.println(temp.toString());
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
