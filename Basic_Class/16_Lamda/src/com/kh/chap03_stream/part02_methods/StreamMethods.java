@@ -94,7 +94,7 @@ public class StreamMethods {
 		// 3) collect(Collectors.toMap(Function,Function)) : 스트림의 결과 값을 Map으로 변환시 사용
 		Map<Integer , String> result3 = list4.stream()
 												.distinct()
-												.collect(Collectors.toMap(n -> n, n -> n + "" + n + n)); // 1 : 111 , 2 : 222 , 3 : 333 ...
+												.collect(Collectors.toMap(n -> n, n -> n + "" + n + "" + n)); // 1 : 111 , 2 : 222 , 3 : 333 ...
 		System.out.println(result3);
 	}
 	
