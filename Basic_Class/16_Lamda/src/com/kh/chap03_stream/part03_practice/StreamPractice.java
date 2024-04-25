@@ -126,12 +126,11 @@ public class StreamPractice {
 		// 7. slist에서 20살 이상인 학생의 평균점수를 구하는 프로그램
 		// 80.0
 		// System.out.println(score);
-		int score = slist.stream()
+		double score = slist.stream()
 			.filter(stu -> stu.getAge() >=20)
-			.map(stu -> stu.getScore())
-			.reduce(0 , (init , n ) -> {
-				return init + n;
-			});
+			.mapToInt(stu -> stu.getScore())
+			.average()
+			.orElse(0);
 		System.out.println(score);
 
 		// 8. wordArr내부요소의 공백을 모두 제거한후 List<String>으로 변환하는 프로그램
