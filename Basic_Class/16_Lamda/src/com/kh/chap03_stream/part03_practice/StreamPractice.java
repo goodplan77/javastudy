@@ -2,6 +2,7 @@ package com.kh.chap03_stream.part03_practice;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -108,8 +109,9 @@ public class StreamPractice {
 		
 		String str = strlist.stream()
 				.distinct()
-				.reduce((s1 , s2) -> s1.concat(s2))
-				.get();
+				.collect(Collectors.joining());
+				//.reduce((s1 , s2) -> s1.concat(s2))
+				//.get();
 		
 		System.out.println(str);
 
@@ -159,7 +161,7 @@ public class StreamPractice {
 		// 출력결과 : true/false값
 		
 		boolean bool1 = Arrays.stream(wordArr)
-							.map(s -> s.replaceAll(" ", ""))
+							.map(s -> s.replaceAll(" ", "")) // == replace(" ", "")
 							.anyMatch(s1 -> s1.length() >=8);
 		System.out.println(bool1);
 	}
